@@ -7,8 +7,10 @@ demo:TestCovid19
 # Team:
 Scrum Master Abdenacer Sandali
 
-Hamza laQraa
+Hamza laQraa 
+
 Saida Barakat
+
 Safae Balha
 
 Technologies we used:
