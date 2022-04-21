@@ -3,7 +3,7 @@
 # Projet:
 Une école privée souhaite informatiser son système de gestion. Elle vous a contacté  pour réaliser une application répondant à ses besoins.
 
-demo:TestCovid19
+demo:
 # Team:
 Scrum Master Abdenacer Sandali
 
