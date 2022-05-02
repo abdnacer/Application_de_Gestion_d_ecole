@@ -7,9 +7,11 @@ demo:
 # Team:
 Scrum Master Abdenacer Sandali
 
-Hamza laQraa 
+* [Hamza laQraa](https://github.com/Hamzacos)
 
-Saida Barakat
+* [Saida Barakat](https://github.com/saidaBRKT)
+
+*  [Safae Balha](https://github.com/safabalo)
 
 Safae Balha
 
