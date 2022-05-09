@@ -21,23 +21,25 @@
                 </div>
             <ul class="list-inline mt-5">
                 <li class="ms-3 mb-3">
-                    <a href="admin.php" class="text-decoration-none text-white fs-4">Dashboard</a>
+                    <a href="adminPage.php" class="text-decoration-none text-white fs-5">Dashboard</a>
                 </li>
                 <li class="ms-3">
-                    <a href="professor.php" class="text-decoration-none text-white fs-4">Professeur</a>
+                    <a href="professor.php" class="text-decoration-none text-white fs-5">Professeur</a>
                 </li>
                 <li class="ms-3 my-3">
-                    <a href="student.php" class="text-decoration-none text-white fs-4">Etudiants</a>
+                    <a href="student.php" class="text-decoration-none text-white fs-5">Etudiants</a>
                 </li>
                 <li class="ms-3 my-3">
-                    <a href="parent.php" class="text-decoration-none text-white fs-4">Parents</a>
+                    <a href="parent.php" class="text-decoration-none text-white fs-5">Parents</a>
                 </li>
                 <li class="ms-3">
-                    <a href="settings.php" class="text-decoration-none text-white fs-4">Réglages</a>
+                    <a href="settings.php" class="text-decoration-none text-white fs-5 text-center">Réglages</a>
                 </li>
+                <div class="d-flex align-items-end">
                 <li id="logout" class="ms-2">
-                    <a href="" class="text-decoration-none text-white fs-4">Se déconnecter</a>
+                    <a href="" class="text-decoration-none text-white fs-5">Se déconnecter</a>
                 </li>
+                </div>
             </ul>
             </div>
         </div>
