@@ -28,7 +28,7 @@
         </form>
     </section>
     <section class="w-50 vh-100 image_section">
-        <img src="../Public/Design/Assets/Mobile login-pana.png" alt="" class="w-100">
+        <img src="./Public/Design/Assets/Mobile login-pana.png" alt="" class="w-100">
     </section>
 </body>
 </html>

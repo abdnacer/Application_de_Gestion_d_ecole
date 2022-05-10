@@ -1,0 +1,7 @@
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteBase /Application_de_Gestion_d_ecole/
+
+RewriteRule ^([-a-zA-a0-9]+)$ index.php?page=$1

@@ -2,7 +2,7 @@
   <div class="title_nav">
     <h1>GE-School</h1>
     <div class="img_nav">
-      <img src="../public/images/eren.png" alt="eren">
+      <img src="./public/images/eren.png" alt="eren">
       <p>Saida</p>
     </div>
   </div>

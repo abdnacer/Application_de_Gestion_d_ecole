@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashbord</title>
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../public/Css/style.css">
+  <link rel="stylesheet" href="./public/Css/style.css">
 </head>
 <body>
   <main>
@@ -23,7 +23,7 @@
       <div class="card_dash">
         <div class="card">
           <div>
-            <img src="../public/images/prof.png" alt="prof">
+            <img src="./public/images/prof.png" alt="prof">
           </div>
           <div class="card_con">
             <p>Professeur</p>
@@ -33,7 +33,7 @@
         
         <div class="card">
           <div>
-            <img src="../public/images/prof.png" alt="prof">
+            <img src="./public/images/prof.png" alt="prof">
           </div>
           <div class="card_con">
             <p>Etudiants</p>
@@ -43,7 +43,7 @@
         
         <div class="card">
           <div>
-            <img src="../public/images/prof.png" alt="prof">
+            <img src="./public/images/prof.png" alt="prof">
           </div>
           <div class="card_con">
             <p>Classes</p>
