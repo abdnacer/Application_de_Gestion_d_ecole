@@ -1,137 +1,290 @@
-:root{
-    --light_blue:#F7F9FC;
-    --blue_green:#1DC9B7;
-    --light_green:#5EC473;
-    --beige:#F8F0F0;
-    --dirty_pink:#D2C8C8;
-}
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color: var(--light_blue);
-}
-.sidebar{
-    top: 0px;
-    position: fixed;
-    width: 15rem;
-    
-}
-.titles{
-    color: var(--dirty_pink);
-}
-nav{
-    top: 0;
-    position: fixed;
-    margin-left: 15rem;
-    width:85rem;
-    height: 3rem;
-    background-color: var(--light_blue);
-    z-index: 1;
-}
-#user_image{
-    border-radius: 50%;
-}
-#logout{
-    margin-top: 20%;
-}
-.year{
-    margin-left: 15%;
-}
-.research{
-    margin-left:15% ;
-}
-.main_dashboard{
-    margin-top: 3rem;
-    margin-left: 16rem !important;
-    width:84rem;
-    background-color: var(--light_blue);
-    
-}
-.content{
-    width: 75%;
-}
-.adding_button{
-    margin-top: 4.3%;
-    margin-left: 43%;
-    height: 10%;
-}
-.statistics_title{
-    margin-top: 5%;
-    margin-left: 22rem !important;
-    width:84rem;
-}
-.cards{
-    margin-top: 4%;
-    margin-bottom: 4%;
-    margin-left: 5rem !important;
-    width:84rem;
-
-}
-.statistics_cercles{
-    margin-left: 5rem !important;
-    width:84rem;
-
-}
-.student{
- margin-left: 4%;
- margin-right: 4%;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.cercle{
-    border-radius: 50% ;
-    border: solid 10px;
-    height: 200px;
-    width: 200px;
+main{
+  width: 100%;
+  display: flex;
+  background-color: #F7F9FC;
 }
-.percent{
-    margin-top: 20%;
+
+.nav{
+  background-color: #293042;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 100vh;
 }
-.femme{
-    border-color: var(--blue_green);
-    color: var(--blue_green);
-    margin-left: 5%;
+
+.title_nav{
+  margin-top: 40px;
+  height: 200px;
 }
-.user{
-    font-size: 65px;
-    margin-top: 10px;
+
+.title_nav h1{
+  display: flex;
+  justify-content: center;
 }
-.other{
-    margin-left: 5%;
+
+.img_nav{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
-.classes{
-    border-color: var(--light_green);
+
+.img_nav p{
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  margin-left: 20px;
 }
-.social_media{
-    width:70px;
-    height: 70px;
-    border-radius: 50%;
+
+.img_nav img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
-.social_net{
-    width:100px;
-    height: 100px;
-    border-radius: 50%;
+
+.content_nav{
+  height: 450px;
 }
-.inputs{
-    background-color: var(--beige);
-    border: none;
-    border-bottom: 3px solid black;
+
+.content_nav a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: white;
 }
-.image_section{
-    background-color: var(--beige);
+
+.logout_nav p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 }
-.btn_submit{
-    margin-left: 10rem;
+
+.nav_part2{
+  width: 83%;
 }
-#span::before{
-    width: 500px;
-  white-space: pre;
-  word-wrap: break-word;
+
+.content_part2{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  font-size: 22px;
 }
-#span::after{
-    content:"Or";
-    width: 500px;
-  white-space: pre;
-  word-wrap: break-word;
+
+.search i{
+  font-size: 20px;
+}
+
+.search input{
+  padding: 5px;
+  width: 200px;
+}
+
+.title_dash{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.title_dash p{
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+
+.card_dash{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 45px;
+}
+
+.card{
+  display: flex;
+  background-color: white;
+  padding: 25px 50px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.card img{
+  width: 80px;
+  margin-right: 20px;
+}
+
+.card_con p{
+  font-size: 25px;
+}
+
+.stati{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 60px;
+}
+
+.stat1,
+.stat2,
+.stat3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.stat1{
+  border: 6px solid #C44636;
+}
+
+.stat2{
+  border: 6px solid #1DC9B7;
+}
+
+.stat3{
+  border: 6px solid #5EC473;
+}
+
+.stat1, 
+.stat2,
+.stat3 p{
+  font-size: 22px;
+}
+
+.stat1 p:first-child, 
+.stat2 p:first-child,
+.stat3 p:first-child{
+  margin-bottom: 10px;
+}
+
+/* Page de Professeur */
+.title_dashboard{
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.title_dashboard p{
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.title_dashboard button{
+  padding: 8px 50px;
+  border: none;
+  background-color: #293042;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+
+table{
+  width: 90%;
+  margin-left: 40px;
+  border: 1px solid black;
+  border-bottom: none;
+  font-size: 18px;
+}
+
+.head_tab th{
+  background: #293042;
+  color: white;
+  text-align: left;
+}
+
+th,
+td{
+  border-bottom: 1px solid #000;
+  padding: 8px 12px;
+}
+
+/* Css De Form Modal */
+.countainer{
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top: 0px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  display:none;
+}
+
+.child{
+  border-radius:15px;
+  background:white;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  position:relative;
+  box-shadow: 0 0 20px 0px rgb(124, 112, 112);
+}
+
+.title,
+.btn_group{
+  display: flex;
+  justify-content: center;
+}
+
+.title{
+  margin: 30px 0 15px 0;
+}
+
+.btn_group{
+  margin-top: 20px;
+}
+
+.input{
+  padding: 12px;
+  margin: 0 80px;
+}
+
+.input input{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.457);
+}
+
+.btn_group button:first-child{
+  background-color: #7C7070;
+  border: none;
+  padding: 8px 28px;
+  border-radius: 5px;
+  margin-right: 25px;
+  font-size:  16px;
+}
+
+.btn_group button:last-child{
+  background-color: #293042;
+  color: white;
+  border: none;
+  padding: 5px 35px;
+  border-radius: 5px;
+  margin-left: 15px;
+  font-size:  16px;
+}
+
+
+.link{
+  text-decoration: none;
+  color: black;
 }
