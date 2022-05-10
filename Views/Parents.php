@@ -1,10 +1,14 @@
+<?php 
+  $data = new ParentsController();
+  $parents = $data->getAllParents();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Parents</title>
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="../public/Css/bootstrap.css"> -->
   <link rel="stylesheet" href="./public/Css/style.css">
@@ -26,37 +30,21 @@
 
       <table class="table">
           <tr class="head_tab">
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Email</th>
-            <th>CIN</th>
+            <th>Nom Complet</th>
+            <th>Genre</th>
+            <th>Job</th>
+            <th>Adresse</th>
             <th>Phone</th>
-            <th>Etudiant</th>
             <th></th>
             <th></th>
           </tr>
-
+          <?php foreach($parents as $parent): ?>
           <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>Anass</td>
-            <td>
-              <a class="link" href="#" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <a href=""><i class="fa-solid fa-trash-can"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>Anass</td>
+            <td><?php echo $parent['Name'] ?></td>
+            <td><?php echo $parent['Genre'] ?></td>
+            <td><?php echo $parent['Job'] ?></td>
+            <td><?php echo $parent['Adresse'] ?></td>
+            <td><?php echo $parent['Phone'] ?></td>
             <td>
               <a class="link" href="#" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i></a>
             </td>
@@ -64,35 +52,7 @@
               <i class="fa-solid fa-trash-can"></i>
             </td>
           </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>Anass</td>
-            <td>
-              <a class="link" href="#" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>Anass</td>
-            <td>
-              <a class="link" href="#" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-
+          <?php endforeach;; ?>
       </table>
     </div>
 
