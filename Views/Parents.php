@@ -46,7 +46,7 @@
             <td><?php echo $parent['Adresse'] ?></td>
             <td><?php echo $parent['Phone'] ?></td>
             <td>
-              <a class="link" href="#" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a class="link" href="" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i></a>
             </td>
             <td>
               <i class="fa-solid fa-trash-can"></i>
