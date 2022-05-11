@@ -13,6 +13,8 @@ Scrum Master Abdenacer Sandali
 
 *  [Safae Balha](https://github.com/safabalo)
 
+Safae Balha
+
 Technologies we used:
 - Agile (kanban board manipulation) + Daily maintenance of the group's schedule.
 - Creation of multipage in HTML and Bootstrap.
