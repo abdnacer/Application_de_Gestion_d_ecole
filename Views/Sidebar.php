@@ -8,10 +8,10 @@
   </div>
 
   <div class="content_nav">
-    <a href="Dashboard.php">Dashboard</a>
-    <a href="Professeur.php">Professeur</a>
-    <a href="Etudiants.php">Etudiants</a>
-    <a href="Parents.php">Parents</a>
+    <a href="?page=dashboard">Dashboard</a>
+    <a href="?page=Professeur">Professeur</a>
+    <a href="?page=Etudiants">Etudiants</a>
+    <a href="?page=Parents">Parents</a>
     <a href="#">Reglages</a>
   </div>
 
