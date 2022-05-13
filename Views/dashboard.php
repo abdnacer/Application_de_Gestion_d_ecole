@@ -1,3 +1,7 @@
+<?php 
+  $data = new ParentsController();
+  $nbrParents =$data->CountAllParents();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +31,7 @@
           </div>
           <div class="card_con">
             <p>Professeur</p>
-            <p>20</p>
+            <p><?php echo $nbrParents?></p>
           </div>
         </div>
         
