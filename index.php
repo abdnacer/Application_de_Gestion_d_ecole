@@ -1,8 +1,9 @@
 <?php
- require_once './controllers/homeController.php';
+require_once './autoload.php';
+require_once './controllers/homeController.php';
 
  $home = new homeController();
- $pages = ['Home','singIn','dashboard','Parent','Professor','Student'];
+ $pages = ['dashboard','Etudiants','Parents','Professeur','signIn'];
 
  if(isset($_GET['page'])){
      if(in_array($_GET['page'],$pages)){

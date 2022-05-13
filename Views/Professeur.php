@@ -7,7 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="../public/Css/bootstrap.css"> -->
-  <link rel="stylesheet" href="../public/Css/style.css">
+  <link rel="stylesheet" href="./public/Css/style.css">
 </head>
 <body>
 
@@ -138,6 +138,6 @@
   </main>
 
   <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>
-  <script src="../public/Js/script.js"></script>
+  <script src="./public/Js/script.js"></script>
 </body>
 </html>
