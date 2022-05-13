@@ -8,14 +8,15 @@
   </div>
 
   <div class="content_nav">
-    <a href="?page=dashboard">Dashboard</a>
-    <a href="?page=Professeur">Professeur</a>
-    <a href="?page=Etudiants">Etudiants</a>
-    <a href="?page=Parents">Parents</a>
+<<<<<<< HEAD
+    <a href="dashboard">Dashboard</a>
+    <a href="Professeur">Professeur</a>
+    <a href="Etudiants">Etudiants</a>
+    <a href="Parents">Parents</a>
     <a href="#">Reglages</a>
   </div>
 
   <div class="logout_nav">
-    <p>Se déconnecter</p>
+    <a href="signIn">Se déconnecter</a>
   </div>
 </nav>
