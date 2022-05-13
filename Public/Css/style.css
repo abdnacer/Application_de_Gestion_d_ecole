@@ -227,7 +227,11 @@ td{
   display: flex;
   justify-content:center;
   align-items:center;
-  display:none;
+}
+
+#modal_student_Create,
+#modal_student_Edite{
+  display: none;
 }
 
 .child{

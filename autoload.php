@@ -2,6 +2,7 @@
  session_start();
 
  spl_autoload_register('autoload');
+ require_once('controllers/StudentsController.php');
 
  function autoload($class_name){
     $array_paths = array(
