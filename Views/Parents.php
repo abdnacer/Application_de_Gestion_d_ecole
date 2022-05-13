@@ -24,7 +24,7 @@
       <div class="title_dashboard">
         <p>DATA PARENTS</p>
         <div>
-          <button type="submit" onclick="openModal()">Add</button>
+        <button type="submit" onclick="openModalCreate()">Add</button>
         </div>
       </div>
 
@@ -46,7 +46,7 @@
             <td><?php echo $parent['Adresse'] ?></td>
             <td><?php echo $parent['Phone'] ?></td>
             <td>
-              <a class="link" href="" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
             </td>
             <td>
               <i class="fa-solid fa-trash-can"></i>
@@ -56,10 +56,11 @@
       </table>
     </div>
 
-    <div class="countainer" id="modal_student">
+    <!-- Formulaire De Create -->
+    <div class="countainer" id="modal_student_Create">
       <div class="child">
         <div class="title">
-          <h1>Create Parents</h1>
+          <h1>Create Parent</h1>
         </div>
         <form method="post" id="form" class="inpt_group">
           <div class="input">
@@ -82,11 +83,45 @@
           </div>
         </form>
         <div class="btn_group">
-          <button type="submit" onclick="closeModal()">Cancel</button>
+          <button type="submit" onclick="closeModalCreate()">Cancel</button>
           <button type="submit">Add</button>
         </div>
       </div>
     </div>
+
+    <!-- Formulaire D'edite -->
+    <div class="countainer" id="modal_student_Edite">
+      <div class="child">
+        <div class="title">
+          <h1>Edite Parent</h1>
+        </div>
+        <form method="post" id="form" class="inpt_group">
+          <div class="input">
+            <input type="text" class="nom" placeholder="Nom" id="nom">
+          </div>
+          <div class="input">
+            <input type="text" class="prenom" placeholder="Prenom" id="prenom">
+          </div>
+          <div class="input">
+            <input type="text" class="email" placeholder="Email" id="email">
+          </div>
+          <div class="input">
+            <input type="text" class="cin" placeholder="CIN" id="cin">
+          </div>
+          <div class="input">
+            <input type="text" class="phone" placeholder="Phone" id="phone">
+          </div>
+          <div class="input">
+            <input type="text" class="class" placeholder="Class" id="class">
+          </div>
+        </form>
+        <div class="btn_group">
+          <button type="submit" onclick="closeModalEdite()">Cancel</button>
+          <button type="submit">Add</button>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>
