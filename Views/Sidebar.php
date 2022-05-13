@@ -8,6 +8,7 @@
   </div>
 
   <div class="content_nav">
+<<<<<<< HEAD
     <a href="dashboard">Dashboard</a>
     <a href="Professeur">Professeur</a>
     <a href="Etudiants">Etudiants</a>
