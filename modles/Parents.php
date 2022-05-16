@@ -11,9 +11,8 @@ class parents{
         $stmt = null;
     }
     static public function CountAll(){
-        $stmt = DB::connect()->prepare('SELECT count(*) FROM parents`');
+        $stmt = DB::connect()->prepare('SELECT count(*) FROM parents');
         $stmt->execute();
-        $stmt = array_shift($stmt->fetch(PDO::FETCH_NUM));
-        return $stmt;
+        return $stmt->fetch();;
     }
 }
