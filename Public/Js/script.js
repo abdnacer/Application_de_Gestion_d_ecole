@@ -15,6 +15,11 @@ function openModalEdite(){
 } 
 
 function closeModalEdite(){
+
+  document.getElementById("modal_student_Edite").style.display = "none";
+   
+}
+
   document.getElementById("modal_student_Edite").style.display = "none"; 
 }
 
@@ -29,3 +34,4 @@ form.addEventListener('submit', (e) =>{
     nom.style.border = '1px solid red'
   }
 })
+

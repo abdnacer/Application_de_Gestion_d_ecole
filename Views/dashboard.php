@@ -1,3 +1,9 @@
+<?php 
+  $data = new ProfesseurController();
+  $nbrProfs =$data->CountAllProfs();
+  $cls = new ClassesController();
+  $nbrClasses =$cls->CountAllClasses();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +16,10 @@
   <link rel="stylesheet" href="./public/Css/style.css">
 </head>
 <body>
-  <main>
+<main>
     <?php require_once('Sidebar.php'); ?>
 
-    <div class="nav_part2">
+  <div class="nav_part2">
     <?php require_once('nav.php'); ?>
 
       <div class="title_dash">
@@ -27,7 +33,7 @@
           </div>
           <div class="card_con">
             <p>Professeur</p>
-            <p>20</p>
+            <p><?php echo $nbrProfs[0] ?></p>
           </div>
         </div>
         
@@ -47,34 +53,27 @@
           </div>
           <div class="card_con">
             <p>Classes</p>
-            <p>20</p>
+            <p><?php echo $nbrClasses[0] ?></p>
           </div>
         </div>
       </div>
-
-      <div class="stati">
-        <div class="stat1">
-          <p>34%</p>
-          <p>Homme</p>
+      <div style="display:flex;margin-top:2%;flex-wrap: wrap;">
+        <div class="chart" style="width:70%;">
+          <canvas id="stat"></canvas>
+        </div>
+        <div class="chart" style="width:30%;">
+          <canvas id="myChart"></canvas>
         </div>
         
-        <div class="stat2">
-          <p>66%</p>
-          <p>Femelle</p>
-        </div>
-        
-        <div class="stat3">
-          <p>54%</p>
-          <p>Class</p>
-        </div>
-
       </div>
 
-    </div>
-  </main>
+  </div>
+</main>
 
   <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="Public/Js/stat1.js" ></script>
+  <script src="Public/Js/stat2.js" ></script>
+  
 </body>
 </html>
