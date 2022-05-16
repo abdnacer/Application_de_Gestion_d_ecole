@@ -1,6 +1,8 @@
 <?php 
-  $data = new ParentsController();
-  $nbrParents =$data->CountAllParents();
+  $data = new ProfesseurController();
+  $nbrProfs =$data->CountAllProfs();
+  $cls = new ClassesController();
+  $nbrClasses =$cls->CountAllClasses();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +33,7 @@
           </div>
           <div class="card_con">
             <p>Professeur</p>
-            <p><?php echo $nbrParents[0] ?></p>
+            <p><?php echo $nbrProfs[0] ?></p>
           </div>
         </div>
         
@@ -51,7 +53,7 @@
           </div>
           <div class="card_con">
             <p>Classes</p>
-            <p>20</p>
+            <p><?php echo $nbrClasses[0] ?></p>
           </div>
         </div>
       </div>

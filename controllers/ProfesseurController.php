@@ -43,4 +43,10 @@ class professeurController{
             echo $result;
         }
     }
+
+
+    public function CountAllProfs(){  
+        $parents = professeurs::CountAll();
+        return $parents; 
+    }
 }

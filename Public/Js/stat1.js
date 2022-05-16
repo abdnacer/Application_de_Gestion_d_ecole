@@ -9,14 +9,14 @@ labels: [
 
 ],
 datasets: [{
-label: 'My First Dataset',
+label: 'Gender',
 data: [60/100,40/100],
 backgroundColor: [
 'rgb(255, 99, 132)',
   'rgb(54, 162, 235)'  
 ],
 width:5,
-hoverOffset: 6
+hoverOffset: 4
 }]
 };
 
