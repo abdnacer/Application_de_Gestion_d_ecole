@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../public/Css/bootstrap.min.css">
-        <link rel="stylesheet" href="../public/Css/style.css">
-        <script src="https://kit.fontawesome.com/1fbc6be22b.js" crossorigin="anonymous" defer></script>
-        <title>SignIn</title>
-    </head>
-<body class="d-flex">
-    <section class="w-50 d-flex justify-content-center align-items-center">
-        <form action="dashboard.html" method="post" class="d-flex flex-column">
-            <p>Welcome, back</p>
-            <h1 class="mb-5">Sign In to continue</h1>
-                <input type="email" class="my-4 inputs ms-5" name="" id="" placeholder="Email">
-                <input type="password" class="mb-4 inputs ms-5" name="" id="" placeholder="Password">
-                <div class="d-flex">
-                    <button type="submit" class="btn bg-dark text-white w-25 btn_submit" >submit</button>
-                </div>
-                <span id="span"></span>
-            <div class="d-flex mt-5">
-                <img src="../Public/Design/Assets/google-logo.png" alt="Gmail" class="social_media mx-5">
-                <img src="../Public/Design/Assets/facebook1.png" alt="Facebook" class="social_media me-5">
-                <img src="../Public/Design/Assets/123.png" alt="Printerest" class="social_media">
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./Public/Css/style.css">
+</head>
+<body>
+  <div class="container_signin">
+    <div class="part1_signin">
+      <div class="head_signin">
+        <p>Welcome, back</p>
+        <p>Sign in to continue</p>
+      </div>
+
+      <div class="form_sign">
+        <form class="form_sign1" action="">
+          <input type="text" class="email" placeholder="Email" id="email" name="email">
+          <input type="text" class="password" placeholder="Password" id="password" name="password">
+          <button type="submit" name="submit" id="submit">Submit</button>
         </form>
-    </section>
-    <section class="w-50 vh-100 image_section">
-        <img src="./Public/Design/Assets/Mobile login-pana.png" alt="" class="w-100">
-    </section>
+        <div class="part1_ftr ">
+          <hr class="hr-text" data-content="OR">
+        </div>
+        <div class="part2_ftr">
+          <img src="./Public/images/google.png" alt="">
+          <img src="./Public/images/facebook.png" alt="">
+          <img src="./Public/images/pinterest.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="part2_signin">
+      <img src="./Public/images/login.png" alt="img-login">
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

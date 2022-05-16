@@ -1,6 +1,6 @@
 <?php
 require_once './autoload.php';
- require_once './controllers/homeController.php';
+require_once './controllers/homeController.php';
 
  $home = new homeController();
  $pages = ['dashboard','Etudiants','Parents','Professeur','signIn'];
