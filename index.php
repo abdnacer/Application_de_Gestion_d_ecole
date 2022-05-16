@@ -16,7 +16,11 @@ require_once './controllers/homeController.php';
 
 
  $home = new homeController();
+professeurCrud
  $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','updateProfesseurs', 'deleteProfesseurs'];
+
+ $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','addEtudiants', 'updateEtudiant'];
+
 
  if(isset($_GET['page'])){
      if(in_array($_GET['page'],$pages)){

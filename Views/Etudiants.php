@@ -1,3 +1,8 @@
+<?php
+$data = new etudiantController();
+$etudiants = $data->getAllEtudiants();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,140 +25,79 @@
       <div class="title_dashboard">
         <p>DATA ETUDIANTS</p>
         <div>
-          <button type="submit" onclick="openModalCreate()">Add</button>
+          <a href="addEtudiants">Add</a>
+          <!-- <button type="submit">Add</button> -->
         </div>
       </div>
 
       <table class="table">
           <tr class="head_tab">
             <th>Nom</th>
-            <th>Prenom</th>
             <th>Email</th>
-            <th>CIN</th>
-            <th>Phone</th>
-            <th>Class</th>
+            <th>Genre</th>
+            <th>Classe</th>
+            <th>Adresse</th>
+            <th>Date</th>
+            <th>Nom De Parent</th>
             <th></th>
-            <th></th>
+            <!-- <th></th> -->
           </tr>
-
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
+          <?php foreach($etudiants as $getEtudiants):?>
+            <tr>
+              <td><?php echo $getEtudiants['Nom']?></td>
+              <td><?php echo $getEtudiants['Email'] ?></td>
+              <td><?php echo $getEtudiants['Genre'] ?></td>
+              <td><?php echo $getEtudiants['Classe'] ?></td>
+              <td><?php echo $getEtudiants['Adresse'] ?></td>
+              <td><?php echo $getEtudiants['Date'] ?></td>
+              <td><?php echo $getEtudiants['nom_parent'] ?></td>
+            <td class = "link">
+              <form action="updateEtudiant" method="post" >
+                <input type="hidden" name="id" value="<?php echo $employe['id'];?>">
+                <button class="butun" type="submit"><i class="fas fa-edit"></i></button>
+              </form>
+              <form action="delete" method="post" class="ms-3">
+                <input type="hidden" name="id" value="<?php echo $employe['id'];?>">
+                <button type="submit"><i class="fas fa-trash"></i></button>
+              </form>
+            <!-- update?edit=<?php echo $getEtudiants['id']; ?>
+              <a class="link" href="updateEtudiant"><i class="fa-solid fa-pen-to-square"></i></i></a>
+              <a class="link" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+              <a class="link" href="#"><i class="fa-solid fa-trash-can"></i></a> -->
+              
             </td>
           </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-
+          <?php endforeach ?>
       </table>
     </div>
 
-    <!-- Formulaire De Create -->
-    <div class="countainer" id="modal_student_Create">
-      <div class="child">
-        <div class="title">
-          <h1>Create Etudiants</h1>
-        </div>
-        <form method="post" id="form" class="inpt_group">
-          <div class="input">
-            <input type="text" class="nom" placeholder="Nom" id="nom">
-          </div>
-          <div class="input">
-            <input type="text" class="prenom" placeholder="Prenom" id="prenom">
-          </div>
-          <div class="input">
-            <input type="text" class="email" placeholder="Email" id="email">
-          </div>
-          <div class="input">
-            <input type="text" class="cin" placeholder="CIN" id="cin">
-          </div>
-          <div class="input">
-            <input type="text" class="phone" placeholder="Phone" id="phone">
-          </div>
-          <div class="input">
-            <input type="text" class="class" placeholder="Class" id="class">
-          </div>
-        </form>
-        <div class="btn_group">
-          <button type="submit" onclick="closeModalCreate()">Cancel</button>
-          <button type="submit">Add</button>
-        </div>
-      </div>
-    </div>
-
-
     <!-- Formulaire D'edite -->
-    <div class="countainer" id="modal_student_Edite">
+    <!-- <div class="countainer" id="modal_student_Edite">
       <div class="child">
         <div class="title">
           <h1>Edite Etudiants</h1>
         </div>
         <form method="post" id="form" class="inpt_group">
           <div class="input">
-            <input type="text" class="nom" placeholder="Nom" id="nom">
+            <input type="text" name="Nom" placeholder="Nom" id="nom">
           </div>
           <div class="input">
-            <input type="text" class="prenom" placeholder="Prenom" id="prenom">
+            <input type="text" name="Email" placeholder="Email" id="email">
           </div>
           <div class="input">
-            <input type="text" class="email" placeholder="Email" id="email">
+            <input type="text" name="Genre" placeholder="Genre" id="Genre">
           </div>
           <div class="input">
-            <input type="text" class="cin" placeholder="CIN" id="cin">
+            <input type="text" name="Classe" placeholder="Classe" id="Classe">
           </div>
           <div class="input">
-            <input type="text" class="phone" placeholder="Phone" id="phone">
+            <input type="text" name="Adresse" placeholder="Adresse" id="Adresse">
           </div>
           <div class="input">
-            <input type="text" class="class" placeholder="Class" id="class">
+            <input type="text" name="Date" placeholder="Date" id="Date">
+          </div>
+          <div class="input">
+            <input type="text" name="nom_parent" placeholder="nom_parent" id="nom_parent">
           </div>
         </form>
         <div class="btn_group">
@@ -161,7 +105,7 @@
           <button type="submit">Add</button>
         </div>
       </div>
-    </div>
+    </div> -->
   </main>
 
   <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>

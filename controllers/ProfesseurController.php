@@ -59,5 +59,12 @@ class ProfesseurController{
             echo $result;
         }
     }
+professeurCrud
   }
+
+    public function CountAllProfs(){  
+        $parents = professeurs::CountAll();
+        return $parents; 
+    }
+
 }
