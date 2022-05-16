@@ -1,7 +1,7 @@
 <?php
 
 
-class professeurs{
+class Professeurs{
 
     static public function getAll(){
         $stmt = DB::connect()->prepare('SELECT * FROM `professeurs`');
@@ -10,14 +10,14 @@ class professeurs{
         $stmt->close(); 
         $stmt = null;
     }
-    function getProfesseur($data) { 
-        $id = $data["id_prof"];
+    static function getProfesseur($data) { 
+        $id_prof = $data["id_prof"];
         try{
             $query="SELECT * FROM professeurs WHERE id_prof = :id_prof";
             $stmt = DB::connect()->prepare($query);
-            $stmt->execute(array(":id_prof"=>$id));
+            $stmt->execute(array(":id_prof"=>$id_prof));
             $professeurs=$stmt->fetch(PDO::FETCH_OBJ);
-            return $profeseurs;
+            return $professeurs;
         }catch(PDOException $ex){
             echo 'error' .$ex->getMessage();
         } 
@@ -36,13 +36,19 @@ class professeurs{
         }
      }
      static public function update($data){
-        $stmt = DB::connect()->prepare("UPDATE professeurs SET Nom=:Nom, Genre=:Genre, Classe=:Classe, Matiere=:Matiere, Phone=:Phone, id_prof=:id");
+        $stmt = DB::connect()->prepare("UPDATE professeurs SET 
+                    Nom=:Nom, 
+                    Genre=:Genre, 
+                    Classe=:Classe, 
+                    Matiere=:Matiere, 
+                    Phone=:Phone 
+            WHERE  id_prof=:id_prof");
             $stmt->bindParam(":Nom", $data["Nom"]);
 			$stmt->bindParam(":Genre", $data["Genre"]);
 			$stmt->bindParam(":Classe", $data["Classe"]);
 			$stmt->bindParam(":Matiere", $data["Matiere"]);
 			$stmt->bindParam(":Phone", $data["Phone"]);
-            die(print_r($data));
+            $stmt->bindParam(":id_prof", $data["id_prof"]);
         if($stmt->execute()){
             return 'ok';
         }else{
@@ -50,18 +56,16 @@ class professeurs{
         }
      }
     static public function delete($data){
-        $id = $data["id_prof"];
+         $id_prof = $data['id_prof'];
         try{
-            $query="DELETE FROM professeurs WHERE id_prof = :id_prof";
+            $query='DELETE FROM professeurs WHERE id_prof = :id_prof';
             $stmt = DB::connect()->prepare($query);
-            $stmt->execute(array(":id_prof"=>$id));
+            $stmt->execute(array(':id_prof'=> $id_prof));
             if($stmt->execute()){
                 return 'ok';
-            }else{
-                return 'error';
             }
         }catch(PDOException $ex){
-            echo 'error' .$ex->getMessage();
+            echo 'erreur' .$ex->getMessage();
         } 
     }
 

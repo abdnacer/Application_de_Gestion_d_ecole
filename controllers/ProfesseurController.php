@@ -1,52 +1,70 @@
 <?php
 
-class professeurController{
+class ProfesseurController{
     public function getAllProfesseur(){
             
-        $professeurs = professeurs::getAll();
+        $professeurs = Professeurs::getAll();
         return $professeurs; 
     }
     public function getOneProfesseur(){
         if(isset($_POST['id_prof'])){
-            $data = array(
-                'id_prof'=>$_POST['id_prof']
-            );
-            $professeurs= professeurs::getProfesseur($data);
-            return $professeurs;
+            $data = array('id_prof' => $_POST['id_prof'] );
         }
+        $professeurs= Professeurs:: getProfesseur($data);
+        return $professeurs;
        
     }
     public function AddProfesseur(){
          if(isset($_POST["submit"])){
-             $data = array(
+             $data = array( 
                  "Nom"=>$_POST["Nom"],
                  "Genre"=>$_POST["Genre"],
                  "Classe"=>$_POST["Classe"],
                  "Matiere"=>$_POST["Matiere"],
                  "Phone"=>$_POST["Phone"]
              );
-             $result = professeurs::Add($data);
+             $result = Professeurs::Add($data);
              if($result == "ok"){
-
+                header('location: Professeur');
              }else{
                  echo $result;
              }
          }
     }
-    public function DeleteProfesseur($data){
+    public function UpdateProfesseur(){
+        if(isset($_POST["submit"])){
+            $data = array(
+                "id_prof"=>$_POST['id_prof'],
+                "Nom"=>$_POST["Nom"],
+                "Genre"=>$_POST["Genre"],
+                "Classe"=>$_POST["Classe"],
+                "Matiere"=>$_POST["Matiere"],
+                "Phone"=>$_POST["Phone"]
+            );
+            $result = Professeurs::update($data);
+            if($result == "ok"){
+                header('location: Professeur');
+            }else{
+                echo $result;
+            }
+        }
+   }
+    public function DeleteProfesseur(){
         if(isset($_POST['id_prof'])){
-            $data = $_POST['id_prof'];
-            $result = professeurs::delete($data);
-        }if($result == "ok"){
-
+            $data['id_prof'] = $_POST['id_prof'];
+            $result = Professeurs:: delete($data);
+        if($result === "ok"){
+            header("location: Professeur");
         }else{
             echo $result;
         }
     }
-
+professeurCrud
+  }
 
     public function CountAllProfs(){  
         $parents = professeurs::CountAll();
         return $parents; 
     }
+
 }
