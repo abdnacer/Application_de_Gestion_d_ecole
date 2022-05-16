@@ -7,9 +7,4 @@ class ParentsController{
         $parents = Parents::getAll();
         return $parents; 
     }
-
-    public function CountAllParents(){  
-        $parents = Parents::CountAll();
-        return $parents; 
-    }
 }

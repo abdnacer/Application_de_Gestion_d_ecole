@@ -10,9 +10,4 @@ class parents{
         $stmt->close();
         $stmt = null;
     }
-    static public function CountAll(){
-        $stmt = DB::connect()->prepare('SELECT count(*) FROM parents');
-        $stmt->execute();
-        return $stmt->fetch();;
-    }
 }
