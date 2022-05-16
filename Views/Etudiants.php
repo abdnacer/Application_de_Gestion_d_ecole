@@ -51,20 +51,15 @@ $etudiants = $data->getAllEtudiants();
               <td><?php echo $getEtudiants['Adresse'] ?></td>
               <td><?php echo $getEtudiants['Date'] ?></td>
               <td><?php echo $getEtudiants['nom_parent'] ?></td>
-            <td class = "link">
-              <form action="updateEtudiant" method="post" >
-                <input type="hidden" name="id" value="<?php echo $employe['id'];?>">
-                <button class="butun" type="submit"><i class="fas fa-edit"></i></button>
-              </form>
-              <form action="delete" method="post" class="ms-3">
-                <input type="hidden" name="id" value="<?php echo $employe['id'];?>">
-                <button type="submit"><i class="fas fa-trash"></i></button>
-              </form>
-            <!-- update?edit=<?php echo $getEtudiants['id']; ?>
-              <a class="link" href="updateEtudiant"><i class="fa-solid fa-pen-to-square"></i></i></a>
-              <a class="link" href=""><i class="fa-solid fa-pen-to-square"></i></a>
-              <a class="link" href="#"><i class="fa-solid fa-trash-can"></i></a> -->
-              
+              <td class="link">
+                <form action="updateEtudiant" method="POST">
+                  <input type="hidden" name="id" value="<?php echo $getEtudiants['id'] ?>">
+                  <button class="butun"><i class="fas fa-edit"></i></button>
+                </form>
+                <form action="deleteEtudiants" method="POST">
+                  <input type="hidden" name="id" value="<?php echo $getEtudiants['id'];?>">
+                  <button ><i class="fas fa-trash"></i></button>
+                </form>
             </td>
           </tr>
           <?php endforeach ?>
