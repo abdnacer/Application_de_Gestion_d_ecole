@@ -21,13 +21,65 @@
       $stmt->bindParam(':nom_parent', $data['nom_parent']);
 
       if($stmt->execute()){
-        return 'An etudiants has been created in the list';
+        return 'An Etudiant has been created in the list';
       }
       else{
         return 'No etudiants was created in the list';
       }
       $stmt->close();
       $stmt = null;
+    }
+
+    static public function getEtudiant($data){
+      $id = $data['id'];
+      try {
+        $query = 'SELECT * FROM etudiants WHERE id = :id';
+        $stmt =  DB::connect()->prepare($query);
+        $stmt->execute(array(":id" => $id));
+        $etudiant = $stmt->fetch(PDO::FETCH_OBJ);
+        return $etudiant;
+      } catch (PDOException $ex){
+        echo "erreur" . $ex->getMessage();
+      }
+    }
+
+    static public function update($data){
+      $stmt = DB::connect()->prepare('UPDATE etudiants SET NOM = :NOM, Email = :Email, Genre = :Genre, Classe = :Classe,
+      Adresse = :Adresse, Date = :Date, nom_parent = :nom_parent WHERE id = :id');
+      $stmt->bindParam(':id', $data['id']);
+      $stmt->bindParam(':Nom', $data['Nom']);
+      $stmt->bindParam(':Email', $data['Email']);
+      $stmt->bindParam(':Genre', $data['Genre']);
+      $stmt->bindParam(':Classe', $data['Classe']);
+      $stmt->bindParam(':Adresse', $data['Adresse']);
+      $stmt->bindParam(':Date', $data['Date']);
+      $stmt->bindParam(':nom_parent', $data['nom_parent']);
+      
+      if($stmt->execute()){
+        return 'An Etudiants has been Update in the list';
+      }
+      else{
+        return 'No employee was Update in the list';
+      }
+      $stmt->close();
+      $stmt = null;
+    }
+
+    static public function delete($data){
+      $id = $data['id'];
+      try {
+        $query = 'DELETE FROM etudiants WHERE id = :id';
+        $stmt =  DB::connect()->prepare($query);
+        $stmt->execute(array(":id" => $id));
+        if($stmt->execute()){
+          return 'An Etudiant has been Delete in the list';
+        }
+        else{
+          return 'No Etudiant was Delete in the list';
+        }
+      } catch (PDOException $ex){
+        echo "erreur" . $ex->getMessage();
+      }
     }
   }
 

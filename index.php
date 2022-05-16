@@ -16,10 +16,9 @@ require_once './controllers/homeController.php';
 
 
  $home = new homeController();
-professeurCrud
- $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','updateProfesseurs', 'deleteProfesseurs'];
 
- $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','addEtudiants', 'updateEtudiant'];
+ $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','updateProfesseurs', 'deleteProfesseurs','addEtudiants', 'updateEtudiant', 'deleteEtudiants'];
+
 
 
  if(isset($_GET['page'])){
