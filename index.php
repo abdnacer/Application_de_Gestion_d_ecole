@@ -3,7 +3,7 @@ require_once './autoload.php';
 require_once './controllers/homeController.php';
 
  $home = new homeController();
- $pages = ['dashboard','Etudiants','Parents','Professeur','signIn'];
+ $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','addEtudiants', 'updateEtudiant'];
 
  if(isset($_GET['page'])){
      if(in_array($_GET['page'],$pages)){
