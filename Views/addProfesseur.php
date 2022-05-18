@@ -1,8 +1,9 @@
 <?php
-  if(isset($_POST['submit'])){
-    $data = new etudiantController();
-    $data = $data->addEtudiant();
-  } 
+  if(isset($_POST["submit"])){
+    $data = new ProfesseurController();
+    $newProfesseur = $data->AddProfesseur();
+  }
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,17 +21,12 @@
 <body>
 <div class="container w-50 mt-5 bg-light bg-card1 p-4">
     <div class="py-1">
-      <h1 class="fs-2 fw-bold">Create Etudiants</h1>
+      <h1 class="fs-2 fw-bold">Create Professeur</h1>
     </div>
     <form method="POST">
       <div class="mb-3">
         <label for="exampleInputNom" class="form-label">Nom</label>
         <input type="text" class="form-control shadow-none border-dark" id="nom" name="Nom" aria-describedby="NomHelp">
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleInputEmail" class="form-label">Email</label>
-        <input type="email" name="Email" class="form-control shadow-none border-dark" id="email">
       </div>
 
       <div class="mb-3">
@@ -54,18 +50,23 @@
       </div>
 
       <div class="mb-3">
-        <label for="exampleInputAdresse" class="form-label">Adresse</label>
-        <input type="text" name="Adresse" class="form-control shadow-none border-dark" id="adresse">
+        <label for="exampleInputMatiere" class="form-label">Matières</label>
+        <select class="form-select form-select-lg" id="Matiere" name="Matiere">
+        <option selected>Matières</option>
+          <option value="Arabe">Arabe</option>
+          <option value="Anglais">Anglais</option>
+          <option value="Chimie">Chimie</option>
+          <option value="Français">Français</option>
+          <option value="Mathematique">Mathematique</option>
+          <option value="Philosophie">Philosophie</option>
+          <option value="Physique">Physique</option>
+          <option value="svt">Science de vie</option>
+        </select>
       </div>
 
       <div class="mb-3">
-        <label for="exampleInputDate" class="form-label">Date</label>
-        <input type="date" name="Date" class="form-control shadow-none border-dark" id="date">
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleInputPraent" class="form-label">Nom De Parent</label>
-        <input type="text" name="nom_parent" class="form-control shadow-none border-dark" id="nom_parent">
+        <label for="exampleInputPhone" class="form-label">Phone</label>
+        <input type="text" class="form-control shadow-none border-dark" id="phone" name="Phone" aria-describedby="NomHelp">
       </div>
       <button type="submit" class="btn btn-secondary px-3">Cancel</button>
       <button type="submit" name="submit" class="btn btn-dark px-4">Add</button>
