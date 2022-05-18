@@ -1,12 +1,8 @@
 <?php
   if(isset($_POST['insert'])){
-    // echo 'laljjjejejsnszn';
     $newParent = new ParentsController();
     $newParent->addParents();
    }
-// else{
-//     echo 'fuck off';
-//   }
 ?>
 
 <!DOCTYPE html>
@@ -15,57 +11,61 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parents</title>
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./public/Css/bootstrap.css">
-  <link rel="stylesheet" href="./public/Css/style.css">
+  <title>Create Parents</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link rel="stylesheet" href="./Public/Css/bootstrap.css">
 </head>
 <body>
-
-  <main>
-  <?php require_once('Sidebar.php'); ?>
-    <div class="nav_part2">
-    <?php require_once('nav.php'); ?>
-    <div class="container">
-             <h1>Ajouter un Parents</h1>
-             <form  method="POST">
-               <fieldset>
-                 <h4>merci de remplir le formulaire suivant:</h4>
-                 
-                 <div class="form-group">
-                   <label for="nom">Entrez votre nom</label>
-                   <input type="text" class="form-control" placeholder=" Nom complet" id="nom" name="Name">
-                 </div>
-                 
-                 <div class="form-group">
-                   <label for="Genre">Genre</label>
-                   <input type="text" class="form-control" placeholder="Genre" id="prenom" name="Genre">
-                 </div>
-                 
-                 <div class="form-group">
-                   <label for="Job">Entrez votre Job</label>
-                   <input type="text" class="form-control" id="email" placeholder="JOB" name="Job">
-                 </div>
-
-                 <div class="form-group">
-                   <label for="bio">Entrez votre Adresse</label>
-                   <input type="text" class="form-control" placeholder="Adresse" id="cin" name="Adresse">
-                 </div>
-
-                 <div class="form-group">
-                   <label for="bio">Entrez votre Phone</label>
-                   <input type="text" class="form-control" placeholder="Phone" id="phone" name="Phone">
-                 </div>
-
-                 <div class="col-md-12 text-center py-3">
-                 <input type="submit" name="insert" class="btn btn-dark" value="Insérer">
-                </div>
-                
-               </fieldset>
-             </form>
-         </div>
+<div class="container w-50 mt-5 bg-light bg-card1 p-4">
+    <div class="py-1">
+      <h1 class="fs-2 fw-bold">Create Parent</h1>
     </div>
-  </main>
+    <form method="POST">
+      <div class="mb-3">
+        <label for="exampleInputName" class="form-label">Name</label>
+        <input type="text" class="form-control shadow-none border-dark" id="name" name="Name" aria-describedby="NomHelp">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputGenre" class="form-label">Genre</label>
+        <select  name="Genre" class="form-select shadow-none border-dark" aria-label="Default select example">
+          <option selected>Genre</option>
+          <option value="Homme">Homme</option>
+          <option value="Femme">Femme</option>
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleInputJob" class="form-label">Job</label>
+        <select name="Job" class="form-select shadow-none border-dark" aria-label="Default select example">
+          <option selected>Job</option>
+          <option value="Etudiants">Etudiants</option>
+          <option value="Parents">Parents</option>
+          <option value="Professeurs">Professeurs</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputAdresse" class="form-label">Adresse</label>
+        <input type="text" class="form-control shadow-none border-dark" id="adresse" name="Adresse" aria-describedby="NomHelp">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPhone" class="form-label">Phone</label>
+        <input type="text" class="form-control shadow-none border-dark" id="phone" name="Phone" aria-describedby="NomHelp">
+      </div>
+      <button type="submit" class="btn btn-secondary px-3">Cancel</button>
+      <button type="submit" name="insert" class="btn btn-dark px-4">Add</button>
+    </form>  
+  </div>
+
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="./Public/Js/scripts.js"></script>
 </boody>
 </html>
 

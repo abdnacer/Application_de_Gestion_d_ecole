@@ -17,7 +17,7 @@ require_once './controllers/homeController.php';
 
  $home = new homeController();
 
- $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','updateProfesseurs', 'deleteProfesseurs','addEtudiants', 'updateEtudiant', 'deleteEtudiants', 'addProfesseur'];
+ $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','updateProfesseurs', 'deleteProfesseurs','addEtudiants', 'updateEtudiant', 'deleteEtudiants', 'addProfesseur', 'addParents', 'updateParents', 'deleteParents'];
 
 
 

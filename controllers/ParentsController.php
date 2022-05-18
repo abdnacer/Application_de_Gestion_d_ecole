@@ -28,7 +28,7 @@ class ParentsController{
             );
             $result = parents::add($data);
             if($result === 'ok'){
-                Redirect::to('Parents');  
+                header('location: Parents'); 
             }else{
                 echo $result;
             }
@@ -48,7 +48,7 @@ class ParentsController{
             );
             $result = parents::update($data);
             if($result === 'ok'){
-                Redirect::to('Parents');
+                header('location: Parents');
             }else{
                 echo $result;
             }
@@ -62,7 +62,8 @@ class ParentsController{
             $result = parents::delete($data);
         
             if($result === 'ok'){
-                Redirect::to('Parents'); 
+                header('location: Parents');
+                // Redirect::to('Parents'); 
             }else{
                 echo $result;
             }
