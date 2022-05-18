@@ -1,6 +1,6 @@
 <?php
 
-  class Etudiants{
+  class Etudiant{
     static public function getAll(){
       $stmt = DB::connect()->prepare('SELECT * FROM etudiants');
       $stmt->execute();
@@ -44,9 +44,8 @@
     }
 
     static public function update($data){
-      $stmt = DB::connect()->prepare('UPDATE etudiants SET NOM = :NOM, Email = :Email, Genre = :Genre, Classe = :Classe,
+      $stmt = DB::connect()->prepare('UPDATE etudiants SET Nom = :Nom, Email = :Email, Genre = :Genre, Classe = :Classe,
       Adresse = :Adresse, Date = :Date, nom_parent = :nom_parent WHERE id = :id');
-      $stmt->bindParam(':id', $data['id']);
       $stmt->bindParam(':Nom', $data['Nom']);
       $stmt->bindParam(':Email', $data['Email']);
       $stmt->bindParam(':Genre', $data['Genre']);
@@ -54,12 +53,13 @@
       $stmt->bindParam(':Adresse', $data['Adresse']);
       $stmt->bindParam(':Date', $data['Date']);
       $stmt->bindParam(':nom_parent', $data['nom_parent']);
-      
+      $stmt->bindParam(':id', $data['id']);
+      // die (print_r($data));
       if($stmt->execute()){
-        return 'An Etudiants has been Update in the list';
+        return 'An Etudiant has been Update in the list';
       }
       else{
-        return 'No employee was Update in the list';
+        return 'No etudiants was Update in the list';
       }
       $stmt->close();
       $stmt = null;
