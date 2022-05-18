@@ -49,7 +49,7 @@
             <input type="text" name="nom_parent" placeholder="Nom De Parent" id="nom_parent">
           </div>
           <div class="btn_group">
-              <button type="submit" onclick="closeModalCreate()">Cancel</button>
+              <button type="submit">Cancel</button>
               <button type="submit" name="submit">Add</button>
           </div>
       </form>

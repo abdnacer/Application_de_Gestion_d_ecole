@@ -65,42 +65,6 @@ $etudiants = $data->getAllEtudiants();
           <?php endforeach ?>
       </table>
     </div>
-
-    <!-- Formulaire D'edite -->
-    <!-- <div class="countainer" id="modal_student_Edite">
-      <div class="child">
-        <div class="title">
-          <h1>Edite Etudiants</h1>
-        </div>
-        <form method="post" id="form" class="inpt_group">
-          <div class="input">
-            <input type="text" name="Nom" placeholder="Nom" id="nom">
-          </div>
-          <div class="input">
-            <input type="text" name="Email" placeholder="Email" id="email">
-          </div>
-          <div class="input">
-            <input type="text" name="Genre" placeholder="Genre" id="Genre">
-          </div>
-          <div class="input">
-            <input type="text" name="Classe" placeholder="Classe" id="Classe">
-          </div>
-          <div class="input">
-            <input type="text" name="Adresse" placeholder="Adresse" id="Adresse">
-          </div>
-          <div class="input">
-            <input type="text" name="Date" placeholder="Date" id="Date">
-          </div>
-          <div class="input">
-            <input type="text" name="nom_parent" placeholder="nom_parent" id="nom_parent">
-          </div>
-        </form>
-        <div class="btn_group">
-          <button type="submit" onclick="closeModalEdite()">Cancel</button>
-          <button type="submit">Add</button>
-        </div>
-      </div>
-    </div> -->
   </main>
 
   <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>

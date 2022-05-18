@@ -59,7 +59,6 @@ class ProfesseurController{
             echo $result;
         }
     }
-professeurCrud
   }
 
     public function CountAllProfs(){  

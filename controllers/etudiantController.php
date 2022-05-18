@@ -1,9 +1,9 @@
 <?php
-  include('./modles/Etudiants.php');
+  include('./modles/Etudiant.php');
 
   class etudiantController{
     public function getAllEtudiants(){
-      $etudiants = Etudiants::getAll();
+      $etudiants = Etudiant::getAll();
       return $etudiants;
     }
   
@@ -19,8 +19,8 @@
           'nom_parent' => $_POST['nom_parent'],
         );
   
-        $result = Etudiants::add($data);
-        if($result == 'An etudiants has been created in the list'){
+        $result = Etudiant::add($data);
+        if($result == 'An Etudiant has been created in the list'){
           header('location: Etudiants');
         }
         else{
@@ -34,7 +34,7 @@
         $data = array(
           'id' => $_POST['id']
         );
-        $etudiant = Etudiants::getEtudiant($data); 
+        $etudiant = Etudiant::getEtudiant($data); 
         return $etudiant;
       }
     }
@@ -52,8 +52,8 @@
           'nom_parent' => $_POST['nom_parent'],
         );
   
-        $result = Etudiants::update($data);
-        if($result == 'An Etudiants has been Update in the list'){
+        $result = Etudiant::update($data);
+        if($result == 'An Etudiant has been Update in the list'){
           header('location: Etudiants');
         }
         else{
@@ -65,7 +65,7 @@
     public function deleteEtudiant(){
       if(isset($_POST['id'])){
         $data['id'] = $_POST['id'];
-        $result = Etudiants::delete($data);
+        $result = Etudiant::delete($data);
         if($result == 'An Etudiant has been Delete in the list'){
           header('location: Etudiants');
         }

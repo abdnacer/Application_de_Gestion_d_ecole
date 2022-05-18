@@ -4,6 +4,7 @@
     $etudiant = $exitEtudiant->getOneEtudiants();
   } 
   if(isset($_POST['submit'])){
+    // echo 'laalalalalaa';
     $exitEtudiant = new etudiantController();
     $etudiant = $exitEtudiant->updateEtudiant();
   } 
