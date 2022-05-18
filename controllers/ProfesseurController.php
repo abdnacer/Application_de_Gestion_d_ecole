@@ -25,6 +25,7 @@ class ProfesseurController{
              );
              $result = Professeurs::Add($data);
              if($result == "ok"){
+                Session::set('success', 'professeur ajouté');
                 header('location: Professeur');
              }else{
                  echo $result;
@@ -43,6 +44,7 @@ class ProfesseurController{
             );
             $result = Professeurs::update($data);
             if($result == "ok"){
+                Session::set('success', 'professeur modifié');
                 header('location: Professeur');
             }else{
                 echo $result;
@@ -54,6 +56,7 @@ class ProfesseurController{
             $data['id_prof'] = $_POST['id_prof'];
             $result = Professeurs:: delete($data);
         if($result === "ok"){
+            Session::set('success', 'professeur supprimé');
             header("location: Professeur");
         }else{
             echo $result;
