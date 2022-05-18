@@ -1,3 +1,4 @@
+
 <?php 
   $data = new ParentsController();
   $parents = $data->getAllParents();
@@ -17,14 +18,13 @@
 
   <main>
   <?php require_once('Sidebar.php'); ?>
-
+  
     <div class="nav_part2">
     <?php require_once('nav.php'); ?>
-
       <div class="title_dashboard">
         <p>DATA PARENTS</p>
         <div>
-        <button type="submit" onclick="openModalCreate()">Add</button>
+          <a href="<?php echo BASE_URL;?>addParents"><button type="button">Add</button>
         </div>
       </div>
 
@@ -46,80 +46,20 @@
             <td><?php echo $parent['Adresse'] ?></td>
             <td><?php echo $parent['Phone'] ?></td>
             <td>
-            <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
+              <form method="POST" action="updateParents" classe ="mr-1">
+                <input type="hidden" name="id" value="<?php echo  $parent['id'];?>">
+                <button class="btn btn_sm btn-light" ><i class="fa-solid fa-pen-to-square"></i></button>
+              </form>
             </td>
             <td>
-              <i class="fa-solid fa-trash-can"></i>
+            <form method="POST" action="deleteParents" classe ="mr-1">
+                <input type="hidden" name="id" value="<?php echo  $parent['id'];?>">
+                <button class="btn btn_sm btn-light" > <i class="fa-solid fa-trash-can"></i></button>
+              </form>
             </td>
           </tr>
           <?php endforeach;; ?>
       </table>
-    </div>
-
-    <!-- Formulaire De Create -->
-    <div class="countainer" id="modal_student_Create">
-      <div class="child">
-        <div class="title">
-          <h1>Create Parent</h1>
-        </div>
-        <form method="post" id="form" class="inpt_group">
-          <div class="input">
-            <input type="text" class="nom" placeholder="Nom" id="nom">
-          </div>
-          <div class="input">
-            <input type="text" class="prenom" placeholder="Prenom" id="prenom">
-          </div>
-          <div class="input">
-            <input type="text" class="email" placeholder="Email" id="email">
-          </div>
-          <div class="input">
-            <input type="text" class="cin" placeholder="CIN" id="cin">
-          </div>
-          <div class="input">
-            <input type="text" class="phone" placeholder="Phone" id="phone">
-          </div>
-          <div class="input">
-            <input type="text" class="class" placeholder="Class" id="class">
-          </div>
-        </form>
-        <div class="btn_group">
-          <button type="submit" onclick="closeModalCreate()">Cancel</button>
-          <button type="submit">Add</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Formulaire D'edite -->
-    <div class="countainer" id="modal_student_Edite">
-      <div class="child">
-        <div class="title">
-          <h1>Edite Parent</h1>
-        </div>
-        <form method="post" id="form" class="inpt_group">
-          <div class="input">
-            <input type="text" class="nom" placeholder="Nom" id="nom">
-          </div>
-          <div class="input">
-            <input type="text" class="prenom" placeholder="Prenom" id="prenom">
-          </div>
-          <div class="input">
-            <input type="text" class="email" placeholder="Email" id="email">
-          </div>
-          <div class="input">
-            <input type="text" class="cin" placeholder="CIN" id="cin">
-          </div>
-          <div class="input">
-            <input type="text" class="phone" placeholder="Phone" id="phone">
-          </div>
-          <div class="input">
-            <input type="text" class="class" placeholder="Class" id="class">
-          </div>
-        </form>
-        <div class="btn_group">
-          <button type="submit" onclick="closeModalEdite()">Cancel</button>
-          <button type="submit">Add</button>
-        </div>
-      </div>
     </div>
 
   </main>
