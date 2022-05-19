@@ -1,6 +1,6 @@
 <?php
   if(isset($_POST['find'])){
-    $data = new ParentsController();
+    $data = new ProfesseurController();
     $professeurs = $data->findProfesseur();
   }
   else{
