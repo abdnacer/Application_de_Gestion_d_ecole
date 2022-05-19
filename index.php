@@ -5,7 +5,7 @@ require_once './Views/alert.php';
 
  $home = new homeController();
 
- $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','updateProfesseurs', 'deleteProfesseurs','addEtudiants', 'updateEtudiant', 'deleteEtudiants', 'addProfesseur', 'addParents', 'updateParents', 'deleteParents'];
+ $pages = ['dashboard','Etudiants','Parents','Professeur','signIn','updateProfesseurs', 'deleteProfesseurs','addEtudiants', 'updateEtudiant', 'deleteEtudiants', 'addProfesseur', 'addParents', 'updateParents', 'deleteParents', 'logouat'];
 
  if(isset($_SESSION['logged']) && $_SESSION['logged'] === true ){      
         if(isset($_GET['page'])){

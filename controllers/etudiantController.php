@@ -6,6 +6,14 @@
       $etudiants = Etudiant::getAll();
       return $etudiants;
     }
+
+    public function findEtudiants(){
+      if(isset($_POST['search'])){
+        $data = array('search' => $_POST['search']);
+      }
+      $etudiants = Etudiant::searchEtudiant($data);
+      return $etudiants;
+    }
   
     public function addEtudiant(){
       if(isset($_POST['submit'])){

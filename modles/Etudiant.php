@@ -9,6 +9,19 @@
       $stmt = null;
     }
 
+    static public function searchEtudiant($data){
+      $search = $data['search'];
+      try {
+        $query = 'SELECT * FROM etudiants WHERE Nom LIKE ?';
+        $stmt =  DB::connect()->prepare($query);
+        $stmt->execute(array('%'.$search.'%'));
+        $etudiant = $stmt->fetchAll();
+        return $etudiant;
+      } catch (PDOException $ex){
+        echo "erreur" . $ex->getMessage();
+      }
+    }
+
     static public function add($data){
       $stmt = DB::connect()->prepare('INSERT INTO etudiants (Nom, Email, Genre, Classe, Adresse, Date, nom_parent) 
       VALUES (:Nom, :Email, :Genre, :Classe, :Adresse, :Date, :nom_parent)');

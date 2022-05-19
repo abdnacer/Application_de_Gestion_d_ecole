@@ -67,7 +67,7 @@
         <label for="exampleInputPraent" class="form-label">Nom De Parent</label>
         <input type="text" name="nom_parent" class="form-control shadow-none border-dark" id="nom_parent">
       </div>
-      <button type="submit" class="btn btn-secondary px-3">Cancel</button>
+      <a href="Etudiants" type="submit" class="btn btn-secondary px-3">Cancel</a>
       <button type="submit" name="submit" class="btn btn-dark px-4">Add</button>
     </form>  
   </div>

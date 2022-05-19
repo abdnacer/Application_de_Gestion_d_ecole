@@ -1,6 +1,12 @@
-<?php 
+<?php
+  if(isset($_POST['find'])){
+    $data = new ParentsController();
+    $professeurs = $data->findProfesseur();
+  }
+  else{
   $data = new ProfesseurController();
   $professeurs = $data->getAllProfesseur();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +86,9 @@
 </div>
     
 
-  <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>
-  <script src="./public/Js/script.js"></script>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="./Public/Js/scripts.js"></script>
 </body>
 </html>

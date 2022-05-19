@@ -1,6 +1,12 @@
 <?php
-  $data = new etudiantController();
-  $etudiants = $data->getAllEtudiants();
+  if(isset($_POST['find'])){
+    $data = new etudiantController();
+    $etudiants = $data->findEtudiants();
+  }
+  else{
+    $data = new etudiantController();
+    $etudiants = $data->getAllEtudiants();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +37,7 @@
         <div class="container-fluid">
             <h1 class="fs-2 ps-3">DATA ETUDIANTS</h1>
             <form class="d-flex pe-3">
-            <a href="addParents" class="btn btn-outline-success px-5 py-1 bg-dark text-white border-0 shadow-none" type="submit" >Add</a>
+            <a href="addEtudiants" class="btn btn-outline-success px-5 py-1 bg-dark text-white border-0 shadow-none" type="submit" >Add</a>
               <!-- <button class="btn btn-outline-success px-5 py-1 bg-dark text-white border-0" type="submit">Add</button> -->
             </form>
         </div>
