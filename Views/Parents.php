@@ -1,7 +1,12 @@
-
-<?php 
-  $data = new ParentsController();
-  $parents = $data->getAllParents();
+<?php
+  if(isset($_POST['find'])){
+    $data = new ParentsController();
+    $parents = $data->findParents();
+  }
+  else{
+    $data = new ParentsController();
+    $parents = $data->getAllParents();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +33,7 @@
     <div class="navbar-light">
       <nav class="navbar navbar-expand-lg pt-3 mb-4">
         <div class="container-fluid">
-            <h1 class="fs-2 ps-3">DATA Parents</h1>
+            <h1 class="fs-2 ps-3">DATA PARENTS</h1>
             <form class="d-flex pe-3">
             <a href="addParents" class="btn btn-outline-success px-5 py-1 bg-dark text-white border-0 shadow-none" type="submit" >Add</a>
             </form>

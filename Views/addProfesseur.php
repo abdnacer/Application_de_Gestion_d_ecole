@@ -51,7 +51,7 @@
 
       <div class="mb-3">
         <label for="exampleInputMatiere" class="form-label">Matières</label>
-        <select class="form-select form-select-lg" id="Matiere" name="Matiere">
+        <select class="form-select form-select-lg shadow-none border-dark" id="Matiere" name="Matiere">
         <option selected>Matières</option>
           <option value="Arabe">Arabe</option>
           <option value="Anglais">Anglais</option>
@@ -68,7 +68,7 @@
         <label for="exampleInputPhone" class="form-label">Phone</label>
         <input type="text" class="form-control shadow-none border-dark" id="phone" name="Phone" aria-describedby="NomHelp">
       </div>
-      <button type="submit" class="btn btn-secondary px-3">Cancel</button>
+      <a href="Professeur" type="submit" class="btn btn-secondary px-3 ">Cancel</a>
       <button type="submit" name="submit" class="btn btn-dark px-4">Add</button>
     </form>  
   </div>

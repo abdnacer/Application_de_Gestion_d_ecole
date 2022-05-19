@@ -10,6 +10,20 @@ class Professeurs{
         $stmt->close(); 
         $stmt = null;
     }
+
+    static public function searchProfesseur($data){
+        $search = $data['search'];
+        try {
+            $query = 'SELECT * FROM professeurs WHERE Name LIKE ?';
+            $stmt =  DB::connect()->prepare($query);
+            $stmt->execute(array('%'.$search.'%'));
+            $parent = $stmt->fetchAll();
+            return $parent;
+        } catch (PDOException $ex){
+            echo "erreur" . $ex->getMessage();
+        }
+    }
+
     static function getProfesseur($data) { 
         $id_prof = $data["id_prof"];
         try{

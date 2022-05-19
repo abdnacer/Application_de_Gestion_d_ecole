@@ -73,7 +73,7 @@
         <input type="hidden" name="id" value="<?php echo $etudiant->id ?>">
       </div>
 
-      <button type="submit" class="btn btn-secondary">Cancel</button>
+      <a href="Etudiants" type="submit" class="btn btn-secondary">Cancel</a>
       <button type="submit" name="submit" class="btn btn-dark">Edite</button>
     </form>  
   </div>

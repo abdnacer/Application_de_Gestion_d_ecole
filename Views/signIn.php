@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
       <div class="form_sign">
         <form class="form_sign1" method="post">
           <input type="text" class="email" placeholder="Email" id="email" name="Email">
-          <input type="text" class="password" placeholder="Password" id="password" name="Password">
+          <input type="password" class="password" placeholder="Password" id="password" name="Password">
           <button type="submit" name="submit" id="submit">Submit</button>
         </form>
         <div class="part1_ftr ">

@@ -66,7 +66,7 @@
         <input type="hidden" name="id" value="<?php echo $parent->id?>">
       </div>
 
-      <button type="submit" class="btn btn-secondary">Cancel</button>
+      <a href="Parents" type="submit" class="btn btn-secondary">Cancel</a>
       <button type="submit" name="update" class="btn btn-dark">Edite</button>
     </form>  
   </div>

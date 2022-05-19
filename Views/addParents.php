@@ -57,7 +57,7 @@
         <label for="exampleInputPhone" class="form-label">Phone</label>
         <input type="text" class="form-control shadow-none border-dark" id="phone" name="Phone" aria-describedby="NomHelp">
       </div>
-      <button type="submit" class="btn btn-secondary px-3">Cancel</button>
+      <a href="Parents" type="submit" class="btn btn-secondary px-3">Cancel</a>
       <button type="submit" name="insert" class="btn btn-dark px-4">Add</button>
     </form>  
   </div>

@@ -74,7 +74,7 @@
         <input type="hidden" name="id_prof" value="<?php echo $professeur->id_prof?>">
       </div>
 
-      <button type="submit" class="btn btn-secondary">Cancel</button>
+      <a href="Professeur" type="submit" class="btn btn-secondary">Cancel</a>
       <button type="submit" name="submit" class="btn btn-dark">Edite</button>
     </form>  
   </div>

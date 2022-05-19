@@ -8,6 +8,14 @@ class ParentsController{
         return $parents; 
     }
 
+    public function findParents(){
+        if(isset($_POST['search'])){
+            $data = array('search' => $_POST['search']);
+        }
+        $parents = parents::searchParents($data);
+        return $parents;
+    }
+
     public function getOneParents(){
         if(isset($_POST['id'])){
             $data = array(

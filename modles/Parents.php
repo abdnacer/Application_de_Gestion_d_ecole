@@ -10,6 +10,20 @@ class parents{
         $stmt->close();
         $stmt = null;
     }
+
+    static public function searchParents($data){
+        $search = $data['search'];
+        try {
+            $query = 'SELECT * FROM parents WHERE Name LIKE ?';
+            $stmt =  DB::connect()->prepare($query);
+            $stmt->execute(array('%'.$search.'%'));
+            $parent = $stmt->fetchAll();
+            return $parent;
+        } catch (PDOException $ex){
+            echo "erreur" . $ex->getMessage();
+        }
+    }
+
     static public function getParents($data){
         $id = $data['id'];
         try{

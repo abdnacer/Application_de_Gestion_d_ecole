@@ -6,6 +6,15 @@ class ProfesseurController{
         $professeurs = Professeurs::getAll();
         return $professeurs; 
     }
+
+    public function findProfesseur(){
+        if(isset($_POST['search'])){
+            $data = array('search' => $_POST['search']);
+        }
+        $parents = parents::searchProfesseur($data);
+        return $parents;
+    }
+
     public function getOneProfesseur(){
         if(isset($_POST['id_prof'])){
             $data = array('id_prof' => $_POST['id_prof'] );
