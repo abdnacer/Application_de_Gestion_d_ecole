@@ -88,4 +88,14 @@ class Professeurs{
         $stmt->execute();
         return $stmt->fetch();
     }
+    static public function CountFemme(){
+        $stmt = DB::connect()->prepare("SELECT count(*) FROM professeurs WHERE Genre='Femme'");
+        $stmt->execute();
+        return $stmt->fetch();
+      }
+      static public function CountHomme(){
+        $stmt = DB::connect()->prepare("SELECT count(*) FROM professeurs WHERE Genre='Homme'");
+        $stmt->execute();
+        return $stmt->fetch();
+      }
 }

@@ -78,5 +78,13 @@ class ProfesseurController{
         $parents = professeurs::CountAll();
         return $parents; 
     }
-
+  
+    public function ProfFemme(){  
+        $parents = professeurs::CountFemme();
+        return $parents; 
+      }
+      public function ProfHomme(){  
+        $parents = professeurs::CountHomme();
+        return $parents; 
+      }
 }
