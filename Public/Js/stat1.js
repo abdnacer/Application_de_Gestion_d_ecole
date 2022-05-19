@@ -10,7 +10,7 @@ labels: [
 ],
 datasets: [{
 label: 'Gender',
-data: [60/100,40/100],
+data: [20,80],
 backgroundColor: [
 'rgb(255, 99, 132)',
   'rgb(54, 162, 235)'  
