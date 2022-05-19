@@ -1,4 +1,4 @@
-
+// Partie Code De SideBar
 window.addEventListener('DOMContentLoaded', event => {
     const sidebarToggle = document.body.querySelector('#sidebarToggle');
     if (sidebarToggle) {
@@ -10,3 +10,19 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 });
+
+// Partie  Code de Recherche
+let search = document.getElementById('search')
+
+search.addEventListener('input', function() {
+    let value = this.value.toUpperCase()
+    let columns = [...document.querySelectorAll('.name-row')]
+
+    columns.forEach(column => {
+        if(!column.textContent.toUpperCase().startsWith(value)) {
+            column.parentElement.style.display = 'none';
+        } else {
+            column.parentElement.style.display = 'table-row';
+        }
+    })    
+})

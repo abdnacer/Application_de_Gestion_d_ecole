@@ -52,7 +52,7 @@
         $etudiant = $stmt->fetch(PDO::FETCH_OBJ);
         return $etudiant;
       } catch (PDOException $ex){
-        echo "erreur" . $ex->getMessage();
+          echo "erreur" . $ex->getMessage();
       }
     }
 
@@ -67,7 +67,7 @@
       $stmt->bindParam(':Date', $data['Date']);
       $stmt->bindParam(':nom_parent', $data['nom_parent']);
       $stmt->bindParam(':id', $data['id']);
-      // die (print_r($data));
+      
       if($stmt->execute()){
         return 'An Etudiant has been Update in the list';
       }

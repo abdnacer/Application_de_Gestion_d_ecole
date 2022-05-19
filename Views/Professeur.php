@@ -57,7 +57,7 @@
         <tbody class="bg-light">
             <?php foreach ($professeurs as $professeur):?>
             <tr>
-              <td><?php echo $professeur["Nom"]?></td>
+              <td class="name-row"><?php echo $professeur["Nom"]?></td>
               <td><?php echo $professeur["Genre"]?></td>
               <td><?php echo $professeur["Classe"]?></td>
               <td><?php echo $professeur["Matiere"]?></td>

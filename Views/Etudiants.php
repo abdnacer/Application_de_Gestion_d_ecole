@@ -44,9 +44,10 @@
     </nav>
 
     <div class="container-fluid table-responsive">
-      <table class="table table-border ">
+      <table class="table table-border" id="tableList">
       <thead>
         <tr class="text-white bg-dark">
+        <!-- id="Nom" -->
           <th scope="col">Nom</th>
           <th scope="col">Email</th>
           <th scope="col">Genre</th>
@@ -57,10 +58,10 @@
           <th scope="col"></th>
         </tr>
       </thead>
-      <tbody class="bg-light">
+      <tbody class="bg-light ">
           <?php foreach($etudiants as $getEtudiants):?>
             <tr>
-              <td><?php echo $getEtudiants['Nom']?></td>
+              <td class="name-row"><?php echo $getEtudiants['Nom']?></td>
               <td><?php echo $getEtudiants['Email'] ?></td>
               <td><?php echo $getEtudiants['Genre'] ?></td>
               <td><?php echo $getEtudiants['Classe'] ?></td>
@@ -89,6 +90,7 @@
     </div>
     </div>
   </div>
+
 
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
