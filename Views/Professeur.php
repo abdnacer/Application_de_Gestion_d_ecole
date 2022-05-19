@@ -4,8 +4,8 @@
     $professeurs = $data->findProfesseur();
   }
   else{
-  $data = new ProfesseurController();
-  $professeurs = $data->getAllProfesseur();
+    $data = new ProfesseurController();
+    $professeurs = $data->getAllProfesseur();
   }
 ?>
 <!DOCTYPE html>

@@ -3,8 +3,6 @@
   $nbrProfs =$data->CountAllProfs();
   $femmeProf=$data->ProfFemme();
   $hommeProf=$data->ProfHomme();
-  echo $femmeProf[0];
-  echo $hommeProf[0];
   $cls = new ClassesController();
   $nbrClasses =$cls->CountAllClasses();
   

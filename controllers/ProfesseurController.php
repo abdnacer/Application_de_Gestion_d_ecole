@@ -11,8 +11,8 @@ class ProfesseurController{
         if(isset($_POST['search'])){
             $data = array('search' => $_POST['search']);
         }
-        $parents = Professeurs::searchProfesseur($data);
-        return $parents;
+        $professeurs = Professeurs::searchProfesseur($data);
+        return $professeurs;
     }
 
     public function getOneProfesseur(){
