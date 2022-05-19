@@ -41,7 +41,7 @@
     </nav>
 
     <div class="container-fluid table-responsive">
-      <table class="table table-border ">
+      <table class="table table-border">
       <thead>
         <tr class="text-white bg-dark">
             <th scope="col">Nom Complet</th>
@@ -54,7 +54,7 @@
       <tbody class="bg-light">
           <?php foreach($parents as $parent): ?>
           <tr>
-            <td><?php echo $parent['Name'] ?></td>
+            <td class="name-row"><?php echo $parent['Name'] ?></td>
             <td><?php echo $parent['Genre'] ?></td>
             <td><?php echo $parent['Job'] ?></td>
             <td><?php echo $parent['Adresse'] ?></td>
