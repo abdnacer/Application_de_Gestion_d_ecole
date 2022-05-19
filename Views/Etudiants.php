@@ -1,170 +1,98 @@
+<?php
+  if(isset($_POST['find'])){
+    $data = new etudiantController();
+    $etudiants = $data->findEtudiants();
+  }
+  else{
+    $data = new etudiantController();
+    $etudiants = $data->getAllEtudiants();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="../public/Css/bootstrap.css"> -->
-  <link rel="stylesheet" href="./public/Css/style.css">
+  <title>Dashbord Students</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link rel="stylesheet" href="./Public/Css/bootstrap.css">
 </head>
 <body>
 
-  <main>
+  <div class="d-flex" id="wrapper">
   <?php require_once('Sidebar.php'); ?>
 
-    <div class="nav_part2">
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
     <?php require_once('nav.php'); ?>
 
-      <div class="title_dashboard">
-        <p>DATA ETUDIANTS</p>
-        <div>
-          <button type="submit" onclick="openModalCreate()">Add</button>
+    <!-- Page content-->
+    <div class="navbar-light">
+    <nav class="navbar navbar-expand-lg pt-3 mb-4">
+        <div class="container-fluid">
+            <h1 class="fs-2 ps-3">DATA ETUDIANTS</h1>
+            <form class="d-flex pe-3">
+            <a href="addEtudiants" class="btn btn-outline-success px-5 py-1 bg-dark text-white border-0 shadow-none" type="submit" >Add</a>
+              <!-- <button class="btn btn-outline-success px-5 py-1 bg-dark text-white border-0" type="submit">Add</button> -->
+            </form>
         </div>
-      </div>
+    </nav>
 
-      <table class="table">
-          <tr class="head_tab">
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Email</th>
-            <th>CIN</th>
-            <th>Phone</th>
-            <th>Class</th>
-            <th></th>
-            <th></th>
-          </tr>
-
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
+    <div class="container-fluid table-responsive">
+      <table class="table table-border ">
+      <thead>
+        <tr class="text-white bg-dark">
+          <th scope="col">Nom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Genre</th>
+          <th scope="col">Classe</th>
+          <th scope="col">Adresse</th>
+          <th scope="col">Date</th>
+          <th scope="col">Nom De Parent</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="bg-light">
+          <?php foreach($etudiants as $getEtudiants):?>
+            <tr>
+              <td><?php echo $getEtudiants['Nom']?></td>
+              <td><?php echo $getEtudiants['Email'] ?></td>
+              <td><?php echo $getEtudiants['Genre'] ?></td>
+              <td><?php echo $getEtudiants['Classe'] ?></td>
+              <td><?php echo $getEtudiants['Adresse'] ?></td>
+              <td><?php echo $getEtudiants['Date'] ?></td>
+              <td><?php echo $getEtudiants['nom_parent'] ?></td>
+              <td class="d-flex fs-4 text-dark border-0 text-end">
+                <form action="updateEtudiant" method="POST">
+                  <input type="hidden" name="id" value="<?php echo $getEtudiants['id'] ?>">
+                  <button class="border-0 bg-white p-0">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                </form>
+                <form action="deleteEtudiants" method="POST">
+                  <input type="hidden" name="id" value="<?php echo $getEtudiants['id'];?>">
+                  <button class="border-0 bg-white p-0">
+                    <i class="bi bi-trash-fill ms-3"></i>
+                  </button>
+                </form>
             </td>
           </tr>
-          <tr>
-            <td>Nasser</td>
-            <td>Sandali</td>
-            <td>sandali@gmail.com</td>
-            <td>SH191020</td>
-            <td>0762401604</td>
-            <td>2</td>
-            <td>
-              <a class="link" href="#" onclick="openModalEdite()"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-            <td>
-              <i class="fa-solid fa-trash-can"></i>
-            </td>
-          </tr>
-
+          <?php endforeach ?>
+          </tbody>
       </table>
-    </div>
-
-    <!-- Formulaire De Create -->
-    <div class="countainer" id="modal_student_Create">
-      <div class="child">
-        <div class="title">
-          <h1>Create Etudiants</h1>
-        </div>
-        <form method="post" id="form" class="inpt_group">
-          <div class="input">
-            <input type="text" class="nom" placeholder="Nom" id="nom">
-          </div>
-          <div class="input">
-            <input type="text" class="prenom" placeholder="Prenom" id="prenom">
-          </div>
-          <div class="input">
-            <input type="text" class="email" placeholder="Email" id="email">
-          </div>
-          <div class="input">
-            <input type="text" class="cin" placeholder="CIN" id="cin">
-          </div>
-          <div class="input">
-            <input type="text" class="phone" placeholder="Phone" id="phone">
-          </div>
-          <div class="input">
-            <input type="text" class="class" placeholder="Class" id="class">
-          </div>
-        </form>
-        <div class="btn_group">
-          <button type="submit" onclick="closeModalCreate()">Cancel</button>
-          <button type="submit">Add</button>
-        </div>
       </div>
     </div>
-
-
-    <!-- Formulaire D'edite -->
-    <div class="countainer" id="modal_student_Edite">
-      <div class="child">
-        <div class="title">
-          <h1>Edite Etudiants</h1>
-        </div>
-        <form method="post" id="form" class="inpt_group">
-          <div class="input">
-            <input type="text" class="nom" placeholder="Nom" id="nom">
-          </div>
-          <div class="input">
-            <input type="text" class="prenom" placeholder="Prenom" id="prenom">
-          </div>
-          <div class="input">
-            <input type="text" class="email" placeholder="Email" id="email">
-          </div>
-          <div class="input">
-            <input type="text" class="cin" placeholder="CIN" id="cin">
-          </div>
-          <div class="input">
-            <input type="text" class="phone" placeholder="Phone" id="phone">
-          </div>
-          <div class="input">
-            <input type="text" class="class" placeholder="Class" id="class">
-          </div>
-        </form>
-        <div class="btn_group">
-          <button type="submit" onclick="closeModalEdite()">Cancel</button>
-          <button type="submit">Add</button>
-        </div>
-      </div>
     </div>
-  </main>
+  </div>
 
-  <script src="https://kit.fontawesome.com/2e18c067b3.js" crossorigin="anonymous"></script>
-  <script src="./public/Js/script.js"></script>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="./Public/Js/scripts.js"></script>
 </body>
 </html>

@@ -7799,11 +7799,24 @@ textarea.form-control-lg {
 }
 
 /* ------ Cards ------*/
-.bg-card1{
-  background-color: #F0F9FF;
+.bg-card1,
+.bg-card2,
+.bg-card3{
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.bg-card2{
+.bg-general{
+  background-color: #fcfcfc;
+}
+
+.icon{
+  background-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+/* .bg-card2{
   background: #FEF6FB;
 }
 
@@ -7813,11 +7826,12 @@ textarea.form-control-lg {
 
 .bg-card4{
   background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%);
-}
+} */
 
 .bg-body{
-  overflow-y: hidden;
   height: 100vh;
+  overflow-y: hidden;
+  background-repeat: no-repeat;
   background-image: linear-gradient(to top right, #00c1fe, #faffc1);
 }
 
@@ -7828,11 +7842,6 @@ textarea.form-control-lg {
 .bg-link{
   color: #00C1FE;
 }
-
-.index{
-  z-index: 1;
-}
-
 /* ------------------ */
 
 
@@ -11321,7 +11330,7 @@ textarea.form-control-lg {
   overflow-x: hidden;
 }
 
-#sidebar-wrapper{
+#sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
   transition: margin 0.25s ease-out;

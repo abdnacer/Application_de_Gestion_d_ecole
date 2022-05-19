@@ -1,3 +1,10 @@
+<?php 
+if(isset($_POST['submit'])){
+  $loginAdmin = new AdminController();
+  $loginAdmin->auth();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +24,9 @@
       </div>
 
       <div class="form_sign">
-        <form class="form_sign1" action="">
-          <input type="text" class="email" placeholder="Email" id="email" name="email">
-          <input type="text" class="password" placeholder="Password" id="password" name="password">
+        <form class="form_sign1" method="post">
+          <input type="text" class="email" placeholder="Email" id="email" name="Email">
+          <input type="password" class="password" placeholder="Password" id="password" name="Password">
           <button type="submit" name="submit" id="submit">Submit</button>
         </form>
         <div class="part1_ftr ">

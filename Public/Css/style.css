@@ -18,7 +18,7 @@ main{
   display: flex;
   flex-direction: column;
   width: 15%;
-  height: 100vh;
+  height: auto;
 }
 
 .title_nav{
@@ -188,13 +188,14 @@ main{
   font-weight: bolder;
 }
 
-.title_dashboard button{
+.title_dashboard a{
   padding: 8px 50px;
   border: none;
   background-color: #293042;
   color: white;
   border-radius: 10px;
   font-size: 18px;
+  text-decoration:none;
 }
 
 
@@ -204,6 +205,7 @@ table{
   border: 1px solid black;
   border-bottom: none;
   font-size: 18px;
+  margin-bottom: 30px;
 }
 
 .head_tab th{
@@ -218,62 +220,61 @@ td{
   padding: 8px 12px;
 }
 
-/* Css De Form Modal */
-.countainer{
-  width: 100%;
-  height: 100%;
-  position:absolute;
-  top: 0px;
+.link{
   display: flex;
-  justify-content:center;
-  align-items:center;
 }
 
-#modal_student_Create,
-#modal_student_Edite{
-  display: none;
+.link button{
+  font-size: 20px;
+  border: none;
 }
 
-.child{
-  border-radius:15px;
-  background:white;
-  top: 0;
-  left: 0;
-  width: 450px;
-  height: 550px;
-  display: flex;
-  flex-direction: column;
-  position:relative;
-  box-shadow: 0 0 20px 0px rgb(124, 112, 112);
+.link button.butun{
+  margin-right: 7px;
 }
 
-.title,
-.btn_group{
+.link:last-child{
+  margin: 0;
+}
+
+/* Css De Formulaire De Add */
+.title_Form_Add{
   display: flex;
   justify-content: center;
 }
 
-.title{
-  margin: 30px 0 15px 0;
+.title_Form_Add p{
+  font-size: 40px;
+  font-weight: bolder;
+  margin-bottom: 30px;
 }
 
-.btn_group{
-  margin-top: 20px;
+.content_add{
+  width: 100%;
+  height: auto;
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.input{
-  padding: 12px;
-  margin: 0 80px;
+.inpt_group{
+  width: 50%;
+  padding: 30px 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius:15px;
+  box-shadow: 0 0 10px 0px rgb(124, 112, 112);
 }
 
 .input input{
-  width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.457);
+  width: 500px;
+  padding: 7px;
+  margin-bottom: 20px;
 }
 
 .btn_group button:first-child{
@@ -281,7 +282,7 @@ td{
   border: none;
   padding: 8px 28px;
   border-radius: 5px;
-  margin-right: 25px;
+  margin-right: 10px;
   font-size:  16px;
 }
 
@@ -289,15 +290,10 @@ td{
   background-color: #293042;
   color: white;
   border: none;
-  padding: 5px 35px;
+  padding: 8px 35px;
   border-radius: 5px;
   margin-left: 15px;
   font-size:  16px;
-}
-
-.link{
-  text-decoration: none;
-  color: black;
 }
 
 /* Page Sign In */
