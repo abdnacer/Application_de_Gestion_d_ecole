@@ -82,35 +82,35 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     const labels = [
-  'Genre'
-];
+        'Genre'
+      ];
 
-const data = {
-labels: [
-'Femme',
-'Homme'
+      const data = {
+      labels: [
+      'Femme',
+      'Homme'
 
-],
-datasets: [{
-label: 'Gender',
-data: [<?php echo $femmeProf[0]?>,<?php echo $hommeProf[0]?>],
-backgroundColor: [
-'rgb(255, 99, 132)',
-  'rgb(54, 162, 235)'  
-],
-width:5,
-hoverOffset: 4
-}]
-};
+      ],
+      datasets: [{
+      label: 'Gender',
+      data: [<?php echo $femmeProf[0]?>,<?php echo $hommeProf[0]?>],
+      backgroundColor: [
+      'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)'  
+      ],
+      width:5,
+      hoverOffset: 4
+      }]
+      };
 
-const config = {
-type: 'pie',
-data: data,
-};
-const myChart = new Chart(
-document.getElementById('myChart'),
-config
-);
+      const config = {
+      type: 'pie',
+      data: data,
+      };
+      const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+      );
   </script>
   <script>
     const lbls = [
