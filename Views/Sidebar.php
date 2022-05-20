@@ -5,9 +5,10 @@
       <h1 class="fs-3 fw-bold text-white">GE-School</h1>
     </div>
     <div class="mt-4 mb-4 d-flex justify-content-center align-items-center">
-        <div class="icon d-flex justify-content-center align-items-center me-3">
+      <img class="rounded-circle w-50 me-3" src="./Public/images/youcode.png" alt="youcode">
+        <!-- <div class="icon d-flex justify-content-center align-items-center me-3">
             <i class="bi bi-person-fill fs-1"></i>
-        </div>
+        </div> -->
         <div class="d-flex justify-content-center align-items-center flex-column mt-3">
             <p class="fw-bold fs-3 text-white">Saida</p>
             <!-- <?php echo $_SESSION['Nom'] ?> -->
