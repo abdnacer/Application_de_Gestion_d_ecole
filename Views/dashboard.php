@@ -74,30 +74,6 @@ require_once 'statistiques.php';
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<<<<<<< HEAD
-  <!-- Core theme JS-->
-  <script src="./Public/Js/scripts.js"></script>
-
-  <script>
-    const labels = ['Genre'];
-
-    const data = {
-      labels: ['Femme','Homme'],
-      datasets: [{
-      label: 'Gender',
-      data: [<?php echo $femme?>,<?php echo $homme?>],
-      backgroundColor: ['rgb(255, 99, 132)','rgb(54, 162, 235)'],
-      width:5,
-      hoverOffset: 4
-      }]
-    };
-
-    const config = {
-      type: 'pie',
-      data: data,
-    };
-    const myChart = new Chart(document.getElementById('myChart'),config);
-=======
   <script>
     const labels = [
         'Genre'
@@ -129,7 +105,6 @@ require_once 'statistiques.php';
       document.getElementById('myChart'),
       config
       );
->>>>>>> 93bbacd3628b866a235c816c4c78d41c4e0b6806
   </script>
 
   <script>

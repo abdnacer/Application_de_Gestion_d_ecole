@@ -7,7 +7,7 @@
     <div class="mt-4 mb-4 d-flex justify-content-center align-items-center">
       <img class="rounded-circle w-50 me-3" src="./Public/images/youcode.png" alt="youcode">
         <div class="d-flex justify-content-center align-items-center flex-column mt-3">
-            <p class="fw-bold fs-3 text-white">Saida</p>
+            <p class="fw-bold fs-3 text-white"><?php echo $_SESSION['Nom'] ?></p>
         </div>
     </div>
     </div>
