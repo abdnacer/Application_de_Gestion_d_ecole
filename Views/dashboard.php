@@ -3,8 +3,6 @@
   $nbrProfs =$data->CountAllProfs();
   $femmeProf=$data->ProfFemme();
   $hommeProf=$data->ProfHomme();
-  echo $femmeProf[0];
-  echo $hommeProf[0];
   $cls = new ClassesController();
   $nbrClasses =$cls->CountAllClasses();
   
@@ -17,9 +15,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashbord Admin</title>
+  <title>Dashbord</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./Public/assets/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Core theme CSS (includes Bootstrap)-->
   <link rel="stylesheet" href="./Public/Css/bootstrap.css">
@@ -84,35 +82,35 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     const labels = [
-  'Genre'
-];
+        'Genre'
+      ];
 
-const data = {
-labels: [
-'Femme',
-'Homme'
+      const data = {
+      labels: [
+      'Femme',
+      'Homme'
 
-],
-datasets: [{
-label: 'Gender',
-data: [<?php echo $femmeProf[0]?>,<?php echo $hommeProf[0]?>],
-backgroundColor: [
-'rgb(255, 99, 132)',
-  'rgb(54, 162, 235)'  
-],
-width:5,
-hoverOffset: 4
-}]
-};
+      ],
+      datasets: [{
+      label: 'Gender',
+      data: [<?php echo $femmeProf[0]?>,<?php echo $hommeProf[0]?>],
+      backgroundColor: [
+      'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)'  
+      ],
+      width:5,
+      hoverOffset: 4
+      }]
+      };
 
-const config = {
-type: 'pie',
-data: data,
-};
-const myChart = new Chart(
-document.getElementById('myChart'),
-config
-);
+      const config = {
+      type: 'pie',
+      data: data,
+      };
+      const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+      );
   </script>
   <script>
     const lbls = [
