@@ -2,8 +2,12 @@
 
 class ClassesController{
     public function CountAllClasses(){  
-        $parents = classes::CountAll();
-        return $parents; 
+        $cls = classes::CountAll();
+        return $cls; 
+    }
+    public function CountEtdsCls($IdClasse){  
+        $cls = classes::AllEtd($IdClasse);
+        return $cls; 
     }
 
 }

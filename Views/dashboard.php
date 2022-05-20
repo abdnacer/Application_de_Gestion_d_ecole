@@ -1,13 +1,5 @@
 <?php 
-  $data = new ProfesseurController();
-  $nbrProfs =$data->CountAllProfs();
-  $femmeProf=$data->ProfFemme();
-  $hommeProf=$data->ProfHomme();
-  echo $femmeProf[0];
-  echo $hommeProf[0];
-  $cls = new ClassesController();
-  $nbrClasses =$cls->CountAllClasses();
-  
+require_once 'statistiques.php';  
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +44,7 @@
             <img src="./Public/images/Etudiant.png" class="w-25">
             <div class="ms-4">
                 <p class="para fs-3">Etudiants</p>
-                <p class="card-text fs-2 fw-bold">120</p>
+                <p class="card-text fs-2 fw-bold"><?php echo $nbrEtds[0] ?></p>
             </div>
         </div>
         
@@ -82,68 +74,48 @@
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Core theme JS-->
+  <script src="./Public/Js/scripts.js"></script>
+
   <script>
-    const labels = [
-  'Genre'
-];
+    const labels = ['Genre'];
 
-const data = {
-labels: [
-'Femme',
-'Homme'
+    const data = {
+      labels: ['Femme','Homme'],
+      datasets: [{
+      label: 'Gender',
+      data: [<?php echo $femme?>,<?php echo $homme?>],
+      backgroundColor: ['rgb(255, 99, 132)','rgb(54, 162, 235)'],
+      width:5,
+      hoverOffset: 4
+      }]
+    };
 
-],
-datasets: [{
-label: 'Gender',
-data: [<?php echo $femmeProf[0]?>,<?php echo $hommeProf[0]?>],
-backgroundColor: [
-'rgb(255, 99, 132)',
-  'rgb(54, 162, 235)'  
-],
-width:5,
-hoverOffset: 4
-}]
-};
-
-const config = {
-type: 'pie',
-data: data,
-};
-const myChart = new Chart(
-document.getElementById('myChart'),
-config
-);
+    const config = {
+      type: 'pie',
+      data: data,
+    };
+    const myChart = new Chart(document.getElementById('myChart'),config);
   </script>
-  <script>
-    const lbls = [
-    'class 1',
-    'class 2',
-    'class 3',
-    'class 4'
-  ];
 
-  const Data = {
-    labels: lbls,
-    datasets: [{
+  <script>
+    const lbls = ['class 1','class 2','class 3','class 4'];
+
+    const Data = {
+      labels: lbls,
+      datasets: [{
       label: 'Classes',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [<?php echo $femmeProf[0]?>, 10, 5,25],
-    }]
-  };
+      data: [<?php echo $nbrCls1[0]?>,<?php echo $nbrCls2[0]?>,<?php echo $nbrCls3[0]?>,<?php echo $nbrCls4[0]?>]}]
+    };
 
-  const confg = {
-    type: 'line',
-    data: Data,
-    options: {}
-  };
-  const stat = new Chart(
-    document.getElementById('stat'),
-    confg
-  );
+    const confg = {
+      type: 'line',
+      data: Data,
+      options: {}
+    };
+    const stat = new Chart(document.getElementById('stat'),confg);
   </script>
-
-  <!-- Core theme JS-->
-  <script src="./Public/Js/scripts.js"></script>
 </body>
 </html>

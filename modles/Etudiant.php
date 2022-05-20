@@ -94,6 +94,22 @@
         echo "erreur" . $ex->getMessage();
       }
     }
+
+    static public function CountAll(){
+      $stmt = DB::connect()->prepare('SELECT count(*) FROM etudiants');
+      $stmt->execute();
+      return $stmt->fetch();
+  }
+  static public function CountFemme(){
+      $stmt = DB::connect()->prepare("SELECT count(*) FROM etudiants WHERE Genre='Femme'");
+      $stmt->execute();
+      return $stmt->fetch();
+    }
+    static public function CountHomme(){
+      $stmt = DB::connect()->prepare("SELECT count(*) FROM etudiants WHERE Genre='Homme'");
+      $stmt->execute();
+      return $stmt->fetch();
+    }
   }
 
 ?>
