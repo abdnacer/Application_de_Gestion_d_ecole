@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edite Professeurs</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./Public/assets/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Core theme CSS (includes Bootstrap)-->
   <link rel="stylesheet" href="./Public/Css/bootstrap.css">

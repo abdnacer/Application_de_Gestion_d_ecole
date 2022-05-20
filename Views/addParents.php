@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Parents</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./Public/assets/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Core theme CSS (includes Bootstrap)-->
   <link rel="stylesheet" href="./Public/Css/bootstrap.css">
@@ -59,7 +59,7 @@
 
       <div class="mb-3">
         <label for="exampleInputPhone" class="form-label">Phone</label>
-        <input type="text" class="form-control shadow-none border-dark phone" id="phone" name="Phone" aria-describedby="NomHelp">
+        <input type="text" class="form-control shadow-none border-dark phone" id="phone" Placeholder="+212" name="Phone" aria-describedby="NomHelp">
         <div class="errorPhone text-danger"></div>
       </div>
 
@@ -85,37 +85,38 @@
     let errorPhone = document.querySelector('.errorPhone')
 
     formEl.addEventListener('submit', (e) =>  {
-        if(nomEl.value == ''){
+        if(nomEl.value.trim() == ''){
             e.preventDefault()
             errorNom.textContent = "Name is empty"
         }else{
             errorNom.textContent = ""
         }
         
-        if(genreEl.value == ''){
+        if(genreEl.value.trim() == ''){
             e.preventDefault()
             errorGenre.textContent = "Genre is empty"
         }else{
             errorGenre.textContent = ""
         }
         
-        if(jobEl.value == ''){
+        if(jobEl.value.trim() == ''){
             e.preventDefault()
             errorJob.textContent = "Class is empty"
         }else{
             errorJob.textContent = ""
         }
-        
-        if(adresseEl.value == ''){
+
+        if(adresseEl.value.trim() == ''){
             e.preventDefault()
             errorAdresse.textContent = "Adresse is empty"
         }else{
             errorAdresse.textContent = ""
         }
         
-        if(phoneEl.value == ''){
+        let regexPhoneNumber = /^((\+)212|06)[0-9](\d{2}){4}$/;
+        if(phoneEl.value.trim() == ''){
             e.preventDefault()
-            errorPhone.textContent = "Date is empty"
+            errorPhone.textContent = "Phone is empty"
         }else{
             errorPhone.textContent = ""
         }

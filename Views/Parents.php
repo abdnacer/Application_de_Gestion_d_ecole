@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Parents</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./Public/assets/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Core theme CSS (includes Bootstrap)-->
   <link rel="stylesheet" href="./Public/Css/bootstrap.css">
@@ -40,7 +40,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid table-responsive">
+    <div class="container-fluid table-responsive" style="height: 500px; display:block; overflow-y: auto;">
       <table class="table table-border">
       <thead>
         <tr class="text-white bg-dark">
@@ -66,12 +66,9 @@
                     <i class="bi bi-pencil-square"></i>
                 </button>            
               </form>
-              <form method="POST" action="deleteParents" classe ="mr-1">
-                  <input type="hidden" name="id" value="<?php echo  $parent['id'];?>">
-                  <button class="border-0 bg-white p-0">
-                      <i class="bi bi-trash-fill ms-3"></i>
-                    </button> 
-                </form>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="border-0 bg-white p-0">
+                <i class="bi bi-trash-fill ms-3"></i>
+              </button>
             </td>
           </tr>
           <?php endforeach; ?>
@@ -81,6 +78,31 @@
       </div>
     </div>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Parents</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You Are Sure To Delete
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <form action="deleteParents" method="POST">
+          <input type="hidden" name="id" value="<?php echo  $parent['id'];?>">
+          <button class="border-0 btn btn-dark">
+            Delete
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
