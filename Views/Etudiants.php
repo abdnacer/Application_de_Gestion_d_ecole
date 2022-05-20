@@ -46,7 +46,6 @@
       <table class="table table-border" id="tableList">
       <thead>
         <tr class="text-white bg-dark">
-        <!-- id="Nom" -->
           <th scope="col">Nom</th>
           <th scope="col">Email</th>
           <th scope="col">Genre</th>
