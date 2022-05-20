@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./Public/Css/bootstrap.css">
     
 </head>
-<body class="d-flex justify-center align-items-center">
-    <img src="Public/images/animation_500_l3e6pik3.gif" alt="Error">
+<body class="d-flex justify-content-center align-items-center">
+    <img class="mt-5" src="Public/images/animation_500_l3e6pik3.gif" alt="Error">
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
