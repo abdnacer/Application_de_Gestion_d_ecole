@@ -6,6 +6,14 @@
       $etudiants = Etudiant::getAll();
       return $etudiants;
     }
+
+    public function findEtudiants(){
+      if(isset($_POST['search'])){
+        $data = array('search' => $_POST['search']);
+      }
+      $etudiants = Etudiant::searchEtudiant($data);
+      return $etudiants;
+    }
   
     public function addEtudiant(){
       if(isset($_POST['submit'])){
@@ -73,6 +81,19 @@
           echo $result;
         }
       }
+    }
+
+    public function CountAllEtds(){  
+      $etd = Etudiant::CountAll();
+      return $etd; 
+    }
+    public function EtdFemme(){  
+      $etd = Etudiant::CountFemme();
+      return $etd; 
+    }
+    public function EtdHomme(){  
+      $etd = Etudiant::CountHomme();
+      return $etd; 
     }
   }
 ?>

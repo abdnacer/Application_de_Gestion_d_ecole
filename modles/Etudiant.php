@@ -9,6 +9,19 @@
       $stmt = null;
     }
 
+    static public function searchEtudiant($data){
+      $search = $data['search'];
+      try {
+        $query = 'SELECT * FROM etudiants WHERE Nom LIKE ?';
+        $stmt =  DB::connect()->prepare($query);
+        $stmt->execute(array('%'.$search.'%'));
+        $etudiant = $stmt->fetchAll();
+        return $etudiant;
+      } catch (PDOException $ex){
+        echo "erreur" . $ex->getMessage();
+      }
+    }
+
     static public function add($data){
       $stmt = DB::connect()->prepare('INSERT INTO etudiants (Nom, Email, Genre, Classe, Adresse, Date, nom_parent) 
       VALUES (:Nom, :Email, :Genre, :Classe, :Adresse, :Date, :nom_parent)');
@@ -39,7 +52,7 @@
         $etudiant = $stmt->fetch(PDO::FETCH_OBJ);
         return $etudiant;
       } catch (PDOException $ex){
-        echo "erreur" . $ex->getMessage();
+          echo "erreur" . $ex->getMessage();
       }
     }
 
@@ -54,7 +67,7 @@
       $stmt->bindParam(':Date', $data['Date']);
       $stmt->bindParam(':nom_parent', $data['nom_parent']);
       $stmt->bindParam(':id', $data['id']);
-      // die (print_r($data));
+      
       if($stmt->execute()){
         return 'An Etudiant has been Update in the list';
       }
@@ -80,6 +93,22 @@
       } catch (PDOException $ex){
         echo "erreur" . $ex->getMessage();
       }
+    }
+
+    static public function CountAll(){
+      $stmt = DB::connect()->prepare('SELECT count(*) FROM etudiants');
+      $stmt->execute();
+      return $stmt->fetch();
+  }
+  static public function CountFemme(){
+      $stmt = DB::connect()->prepare("SELECT count(*) FROM etudiants WHERE Genre='Femme'");
+      $stmt->execute();
+      return $stmt->fetch();
+    }
+    static public function CountHomme(){
+      $stmt = DB::connect()->prepare("SELECT count(*) FROM etudiants WHERE Genre='Homme'");
+      $stmt->execute();
+      return $stmt->fetch();
     }
   }
 

@@ -10,6 +10,20 @@ class Professeurs{
         $stmt->close(); 
         $stmt = null;
     }
+
+    static public function searchProfesseur($data){
+        $search = $data['search'];
+        try {
+            $query = 'SELECT * FROM professeurs WHERE Nom LIKE ?';
+            $stmt =  DB::connect()->prepare($query);
+            $stmt->execute(array('%'.$search.'%'));
+            $professeur = $stmt->fetchAll();
+            return $professeur;
+        } catch (PDOException $ex){
+            echo "erreur" . $ex->getMessage();
+        }
+    }
+
     static function getProfesseur($data) { 
         $id_prof = $data["id_prof"];
         try{
@@ -74,4 +88,14 @@ class Professeurs{
         $stmt->execute();
         return $stmt->fetch();
     }
+    static public function CountFemme(){
+        $stmt = DB::connect()->prepare("SELECT count(*) FROM professeurs WHERE Genre='Femme'");
+        $stmt->execute();
+        return $stmt->fetch();
+      }
+      static public function CountHomme(){
+        $stmt = DB::connect()->prepare("SELECT count(*) FROM professeurs WHERE Genre='Homme'");
+        $stmt->execute();
+        return $stmt->fetch();
+      }
 }

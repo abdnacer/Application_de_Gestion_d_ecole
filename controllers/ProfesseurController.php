@@ -6,6 +6,15 @@ class ProfesseurController{
         $professeurs = Professeurs::getAll();
         return $professeurs; 
     }
+
+    public function findProfesseur(){
+        if(isset($_POST['search'])){
+            $data = array('search' => $_POST['search']);
+        }
+        $professeurs = Professeurs::searchProfesseur($data);
+        return $professeurs;
+    }
+
     public function getOneProfesseur(){
         if(isset($_POST['id_prof'])){
             $data = array('id_prof' => $_POST['id_prof'] );
@@ -25,7 +34,7 @@ class ProfesseurController{
              );
              $result = Professeurs::Add($data);
              if($result == "ok"){
-                Session::set('success', 'professeur ajouté');
+                //  Session::set('success', 'professeur ajouté');
                 header('location: Professeur');
              }else{
                  echo $result;
@@ -44,7 +53,7 @@ class ProfesseurController{
             );
             $result = Professeurs::update($data);
             if($result == "ok"){
-                Session::set('success', 'professeur modifié');
+                // Session::set('success', 'professeur modifié');
                 header('location: Professeur');
             }else{
                 echo $result;
@@ -56,7 +65,7 @@ class ProfesseurController{
             $data['id_prof'] = $_POST['id_prof'];
             $result = Professeurs:: delete($data);
         if($result === "ok"){
-            Session::set('success', 'professeur supprimé');
+            // Session::set('success', 'professeur supprimé');
             header("location: Professeur");
         }else{
             echo $result;
@@ -66,8 +75,17 @@ class ProfesseurController{
   }
 
     public function CountAllProfs(){  
-        $parents = professeurs::CountAll();
-        return $parents; 
+        $prof = professeurs::CountAll();
+        return $prof; 
     }
-
+  
+    public function ProfFemme(){  
+        $prof = professeurs::CountFemme();
+        return $prof; 
+    }
+        
+    public function ProfHomme(){  
+        $prof = professeurs::CountHomme();
+        return $prof; 
+    }
 }
