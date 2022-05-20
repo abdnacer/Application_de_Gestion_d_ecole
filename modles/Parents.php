@@ -91,4 +91,14 @@ class parents{
             echo 'erreur' . $ex->getMessage();
         }
     }
+    static public function CountFemme(){
+        $stmt = DB::connect()->prepare("SELECT count(*) FROM parents WHERE Genre='Femme'");
+        $stmt->execute();
+        return $stmt->fetch();
+      }
+      static public function CountHomme(){
+        $stmt = DB::connect()->prepare("SELECT count(*) FROM parents WHERE Genre='Homme'");
+        $stmt->execute();
+        return $stmt->fetch();
+      }
 }

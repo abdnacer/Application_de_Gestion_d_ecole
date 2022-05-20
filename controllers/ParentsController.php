@@ -77,4 +77,14 @@ class ParentsController{
             }
     }
  }
+
+ public function ParentFemme(){  
+    $prof = Parents::CountFemme();
+    return $prof; 
+}
+    
+public function ParentHomme(){  
+    $prof = Parents::CountHomme();
+    return $prof; 
+}
 }
