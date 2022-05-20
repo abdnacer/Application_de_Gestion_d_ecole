@@ -1,15 +1,5 @@
 <?php 
-<<<<<<< HEAD
-require_once 'statistiques.php';  
-=======
-  $data = new ProfesseurController();
-  $nbrProfs =$data->CountAllProfs();
-  $femmeProf=$data->ProfFemme();
-  $hommeProf=$data->ProfHomme();
-  $cls = new ClassesController();
-  $nbrClasses =$cls->CountAllClasses();
-  
->>>>>>> 93bbacd3628b866a235c816c4c78d41c4e0b6806
+require_once 'statistiques.php';
 ?>
 
 <!DOCTYPE html>
