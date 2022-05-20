@@ -4,7 +4,6 @@
     $newProfesseur = $data->AddProfesseur();
   }
 ?>
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,38 +95,44 @@
     let errorPhone = document.querySelector('.errorPhone')
 
     formEl.addEventListener('submit', (e) =>  {
-        if(nomEl.value == ''){
+        if(nomEl.value.trim() == ''){
             e.preventDefault()
             errorNom.textContent = "Name is empty"
         }else{
             errorNom.textContent = ""
         }
         
-        if(genreEl.value == ''){
+        if(genreEl.value.trim() == ''){
             e.preventDefault()
             errorGenre.textContent = "Genre is empty"
         }else{
             errorGenre.textContent = ""
         }
         
-        if(classeEl.value == ''){
+        if(classeEl.value.trim() == ''){
             e.preventDefault()
             errorClasse.textContent = "Classe is empty"
         }else{
             errorClasse.textContent = ""
         }
         
-        if(matieresEl.value == ''){
+        if(matieresEl.value.trim() == ''){
             e.preventDefault()
             errorMatieres.textContent = "Matieres is empty"
         }else{
             errorMatieres.textContent = ""
         }
         
-        if(phoneEl.value == ''){
+        // let regexPhone = ^[\+]?[212][-\s\.]?[06][-\s\.]?[0-9]{4,6}$
+        if(phoneEl.value.trim() == ''){
             e.preventDefault()
             errorPhone.textContent = "Phone is empty"
-        }else{
+        }
+        // elseif(!regexPhone.test(phoneEl.value.trim()){
+        //     e.preventDefault()
+        //     errorPhone.textContent = "Phone no empty sous forme +212 ou 06"
+        // }
+        else{
             errorPhone.textContent = ""
         }
     })
