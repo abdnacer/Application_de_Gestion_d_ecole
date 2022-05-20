@@ -1,11 +1,5 @@
 <?php 
-  $data = new ProfesseurController();
-  $nbrProfs =$data->CountAllProfs();
-  $femmeProf=$data->ProfFemme();
-  $hommeProf=$data->ProfHomme();
-  $cls = new ClassesController();
-  $nbrClasses =$cls->CountAllClasses();
-  
+require_once 'statistiques.php';
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +44,7 @@
             <img src="./Public/images/Etudiant.png" class="w-25">
             <div class="ms-4">
                 <p class="para fs-3">Etudiants</p>
-                <p class="card-text fs-2 fw-bold">120</p>
+                <p class="card-text fs-2 fw-bold"><?php echo $nbrEtds[0] ?></p>
             </div>
         </div>
         
@@ -112,36 +106,25 @@
       config
       );
   </script>
-  <script>
-    const lbls = [
-    'class 1',
-    'class 2',
-    'class 3',
-    'class 4'
-  ];
 
-  const Data = {
-    labels: lbls,
-    datasets: [{
+  <script>
+    const lbls = ['class 1','class 2','class 3','class 4'];
+
+    const Data = {
+      labels: lbls,
+      datasets: [{
       label: 'Classes',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [<?php echo $femmeProf[0]?>, 10, 5,25],
-    }]
-  };
+      data: [<?php echo $nbrCls1[0]?>,<?php echo $nbrCls2[0]?>,<?php echo $nbrCls3[0]?>,<?php echo $nbrCls4[0]?>]}]
+    };
 
-  const confg = {
-    type: 'line',
-    data: Data,
-    options: {}
-  };
-  const stat = new Chart(
-    document.getElementById('stat'),
-    confg
-  );
+    const confg = {
+      type: 'line',
+      data: Data,
+      options: {}
+    };
+    const stat = new Chart(document.getElementById('stat'),confg);
   </script>
-
-  <!-- Core theme JS-->
-  <script src="./Public/Js/scripts.js"></script>
 </body>
 </html>

@@ -82,5 +82,18 @@
         }
       }
     }
+
+    public function CountAllEtds(){  
+      $etd = Etudiant::CountAll();
+      return $etd; 
+    }
+    public function EtdFemme(){  
+      $etd = Etudiant::CountFemme();
+      return $etd; 
+    }
+    public function EtdHomme(){  
+      $etd = Etudiant::CountHomme();
+      return $etd; 
+    }
   }
 ?>
