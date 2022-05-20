@@ -14,11 +14,11 @@ class Professeurs{
     static public function searchProfesseur($data){
         $search = $data['search'];
         try {
-            $query = 'SELECT * FROM professeurs WHERE Name LIKE ?';
+            $query = 'SELECT * FROM professeurs WHERE Nom LIKE ?';
             $stmt =  DB::connect()->prepare($query);
             $stmt->execute(array('%'.$search.'%'));
-            $parent = $stmt->fetchAll();
-            return $parent;
+            $professeur = $stmt->fetchAll();
+            return $professeur;
         } catch (PDOException $ex){
             echo "erreur" . $ex->getMessage();
         }

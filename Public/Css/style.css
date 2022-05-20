@@ -3,297 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-
-}
-
-main{
-  width: 100%;
-  display: flex;
-  background-color: #F7F9FC;
-}
-
-.nav{
-  background-color: #293042;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  width: 15%;
-  height: auto;
-}
-
-.title_nav{
-  margin-top: 40px;
-  height: 200px;
-}
-
-.title_nav h1{
-  display: flex;
-  justify-content: center;
-}
-
-.img_nav{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.img_nav p{
-  display: flex;
-  align-items: center;
-  font-size: 25px;
-  margin-left: 20px;
-}
-
-.img_nav img{
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-
-.content_nav{
-  height: 450px;
-}
-
-.content_nav a{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 25px;
-  margin-top: 30px;
-  text-decoration: none;
-  color: white;
-}
-
-.logout_nav{
-  height: 100px;
-}
-
-.logout_nav a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 60px;
-  font-size: 22px;
-  text-decoration: none;
-  color: white;
-}
-
-.nav_part2{
-  width: 83%;
-}
-
-.content_part2{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-  font-size: 22px;
-}
-
-.search i{
-  font-size: 20px;
-}
-
-.search input{
-  padding: 5px;
-  width: 200px;
-}
-
-.title_dash{
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.title_dash p{
-  font-size: 40px;
-  font-weight: bolder;
-}
-
-
-.card_dash{
-  display: flex;
-  justify-content: space-around;
-  padding-top: 45px;
-}
-
-.card{
-  display: flex;
-  background-color: white;
-  padding: 25px 50px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.card img{
-  width: 80px;
-  margin-right: 20px;
-}
-
-.card_con p{
-  font-size: 25px;
-}
-
-.stati{
-  display: flex;
-  justify-content: space-around;
-  padding-top: 60px;
-}
-
-.stat1,
-.stat2,
-.stat3{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.stat1{
-  border: 6px solid #C44636;
-}
-
-.stat2{
-  border: 6px solid #1DC9B7;
-}
-
-.stat3{
-  border: 6px solid #5EC473;
-}
-
-.stat1, 
-.stat2,
-.stat3 p{
-  font-size: 22px;
-}
-
-.stat1 p:first-child, 
-.stat2 p:first-child,
-.stat3 p:first-child{
-  margin-bottom: 10px;
-}
-
-/* Page de Professeur */
-.title_dashboard{
-  display: flex;
-  justify-content: space-between;
-  margin: 40px;
-}
-
-.title_dashboard p{
-  font-size: 40px;
-  font-weight: bolder;
-}
-
-.title_dashboard a{
-  padding: 8px 50px;
-  border: none;
-  background-color: #293042;
-  color: white;
-  border-radius: 10px;
-  font-size: 18px;
-  text-decoration:none;
-}
-
-
-table{
-  width: 90%;
-  margin-left: 40px;
-  border: 1px solid black;
-  border-bottom: none;
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.head_tab th{
-  background: #293042;
-  color: white;
-  text-align: left;
-}
-
-th,
-td{
-  border-bottom: 1px solid #000;
-  padding: 8px 12px;
-}
-
-.link{
-  display: flex;
-}
-
-.link button{
-  font-size: 20px;
-  border: none;
-}
-
-.link button.butun{
-  margin-right: 7px;
-}
-
-.link:last-child{
-  margin: 0;
-}
-
-/* Css De Formulaire De Add */
-.title_Form_Add{
-  display: flex;
-  justify-content: center;
-}
-
-.title_Form_Add p{
-  font-size: 40px;
-  font-weight: bolder;
-  margin-bottom: 30px;
-}
-
-.content_add{
-  width: 100%;
-  height: auto;
-  margin-top: 110px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.inpt_group{
-  width: 50%;
-  padding: 30px 0;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius:15px;
-  box-shadow: 0 0 10px 0px rgb(124, 112, 112);
-}
-
-.input input{
-  width: 500px;
-  padding: 7px;
-  margin-bottom: 20px;
-}
-
-.btn_group button:first-child{
-  background-color: #7C7070;
-  border: none;
-  padding: 8px 28px;
-  border-radius: 5px;
-  margin-right: 10px;
-  font-size:  16px;
-}
-
-.btn_group button:last-child{
-  background-color: #293042;
-  color: white;
-  border: none;
-  padding: 8px 35px;
-  border-radius: 5px;
-  margin-left: 15px;
-  font-size:  16px;
 }
 
 /* Page Sign In */
@@ -339,7 +48,8 @@ td{
   background-color: #F8F0F0;
   margin-bottom: 25px;
   height: 30px;
-  padding: 15px 0 12px 10px;
+  padding: 20px 0 16px 10px;
+  outline: none;
 }
 
 .form_sign1 input::placeholder{
@@ -348,11 +58,12 @@ td{
 
 .form_sign1 button{
   width: 120px;
-  padding: 5px;
+  padding: 8px;
   border: none;
   background-color: #293042;
   color: white;
   border-radius: 5px;
+  font-size: 14px;
 }
 
 .part1_ftr{
@@ -415,3 +126,12 @@ td{
 .part2_signin img{
   width: 90%;
 }
+
+/* #scroll::-webkit-scrollbar{
+  width: 5px;
+  height: 8px;
+  background-color: black;
+}
+#scroll::-webkit-scrollbar-thumb {
+  background: red;
+} */

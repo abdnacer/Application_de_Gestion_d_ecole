@@ -1,5 +1,15 @@
 <?php 
+<<<<<<< HEAD
 require_once 'statistiques.php';  
+=======
+  $data = new ProfesseurController();
+  $nbrProfs =$data->CountAllProfs();
+  $femmeProf=$data->ProfFemme();
+  $hommeProf=$data->ProfHomme();
+  $cls = new ClassesController();
+  $nbrClasses =$cls->CountAllClasses();
+  
+>>>>>>> 93bbacd3628b866a235c816c4c78d41c4e0b6806
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +19,9 @@ require_once 'statistiques.php';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashbord Admin</title>
+  <title>Dashbord</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./Public/assets/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Core theme CSS (includes Bootstrap)-->
   <link rel="stylesheet" href="./Public/Css/bootstrap.css">
@@ -74,6 +84,7 @@ require_once 'statistiques.php';
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<<<<<<< HEAD
   <!-- Core theme JS-->
   <script src="./Public/Js/scripts.js"></script>
 
@@ -96,6 +107,39 @@ require_once 'statistiques.php';
       data: data,
     };
     const myChart = new Chart(document.getElementById('myChart'),config);
+=======
+  <script>
+    const labels = [
+        'Genre'
+      ];
+
+      const data = {
+      labels: [
+      'Femme',
+      'Homme'
+
+      ],
+      datasets: [{
+      label: 'Gender',
+      data: [<?php echo $femmeProf[0]?>,<?php echo $hommeProf[0]?>],
+      backgroundColor: [
+      'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)'  
+      ],
+      width:5,
+      hoverOffset: 4
+      }]
+      };
+
+      const config = {
+      type: 'pie',
+      data: data,
+      };
+      const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+      );
+>>>>>>> 93bbacd3628b866a235c816c4c78d41c4e0b6806
   </script>
 
   <script>
